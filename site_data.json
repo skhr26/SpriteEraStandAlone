@@ -1,0 +1,914 @@
+{
+  "हिन्दी न्यूज": {
+    "name": "हिन्दी न्यूज",
+    "template": "default",
+    "stories": [
+      {
+        "id": "cb17fba1-5942-4245-b5f6-62ef99bde3fa",
+        "headline": "पंजाब में AAP को झटका, सुखदीप सिंह चीना ने छोड़ी आम आदमी पार्टी, सभी पदों और प्राथमिक सदस्यता से दिया इस्तीफा",
+        "slug": "punjab/punjab-politics-aap-leader-sukhdeep-singh-china-resigns-from-party-posts-pjs00",
+        "section": "पंजाब",
+        "author": "प्रिया जैस",
+        "time": 1794544101130,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/njdpbvdm/sukhdeep-singh-china-resign-from-aap.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "46c55aa2-bb6a-49b2-9d42-2d2153e2c1ef",
+        "headline": "Gold Rate Today: सोने की कीमतों में गिरावट जारी, दिल्ली में ₹1.39 लाख के पार 24 कैरेट गोल्ड; चांदी भी सस्ती",
+        "slug": "business/gold-rate-today-13-november-2026-silver-price-city-wise-kns18",
+        "section": "बिज़नेस",
+        "author": "करुणा नंद शाहवाल",
+        "time": 1794541850339,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/0f5889ir/Gold-Silver-Rates-Today.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "7decf676-1c5c-4684-840a-6194ef16368d",
+        "headline": "IND vs NZ 4th ODI Live Score: न्यूजीलैंड को लगा छठा झटका, माइकल ब्रेसवेल 15 रन बनाकर आउट, स्कोर 260 के पार  ",
+        "slug": "sports/ind-vs-nz-4th-odi-live-update-mount-maunganui-bay-oval-india-vs-new-zealand-scorecard-shreyas-iyer-captain-rdu99",
+        "section": "खेल",
+        "author": "राहुल उपाध्याय",
+        "time": 1794545924222,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/8gah1w09/ind-vs-nz-32.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "1c9fbb76-4eb3-45a6-92aa-df9f4fc46814",
+        "headline": "दुनियाभर में Microsoft, Outlook और Teams की सेवाएं फिर से बहाल, करीब 7 घंटे से था सर्वर डाउन",
+        "slug": "india/microsoft-outage-outlook-teams-services-restored-globally-sdr12",
+        "section": "देश",
+        "author": "सुप्रिया रानी",
+        "time": 1794543099899,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/uoh80cwr/Microsoft-Outage.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "7ff0fa17-66a3-4f49-825b-4d3f959476ff",
+        "headline": "दिल्ली- NCR में AQI 400 के पार, जहरीली हवा में ये 7 गलतियां फेफड़ों पर पड़ सकती हैं भारी",
+        "slug": "delhi/aqi-crosses-400-in-delhi-ncr-these-7-mistakes-take-a-heavy-toll-on-lungs-sdr12",
+        "section": "दिल्ली",
+        "author": "सुप्रिया रानी",
+        "time": 1794539114436,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/gihwm6c0/Delhi-NCR-Pollution-Today.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "b1b196e0-58b6-461e-871b-b864462c2060",
+        "headline": "Chhath Puja 2026: नहाय-खाय से शुरू हुआ छठ महापर्व, जानें पूजन विधि और 4 दिनों का पूरा कार्यक्रम",
+        "slug": "religion/the-great-festival-of-chhath-begins-with-nahay-khay-ssk08",
+        "section": "धर्म",
+        "author": "सीमा कुमारी",
+        "time": 1794536137637,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/bk7w0rox/Chhath-Puja-2026-2.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "d91bf112-9ff8-4395-9355-b2799db3f3f3",
+        "headline": "IMD Alert: जम्मू-कश्मीर और लद्दाख में बारिश-बर्फबारी का शुरू, कई इलाकों में अलर्ट, दिल्ली में छाए रहेंगे बादल",
+        "slug": "india/western-disturbance-jammu-kashmir-ladakh-snowfall-yellow-warning-delhi-india-weather-update-pjs00",
+        "section": "देश",
+        "author": "प्रिया जैस",
+        "time": 1794537565828,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/qluln5ro/imd-weather-alert-1.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "7cf9732b-52c1-4757-a671-f3b584995474",
+        "headline": "IIT कानपुर की खोज: प्रतिरक्षा कोशिकाएं मिनटों में रोक सकती हैं इंसुलिन स्राव, मधुमेह अनुसंधान को मिली नई दिशा",
+        "slug": "uttar-pradesh/kanpur/iit-kanpur-pancreas-immune-cells-halt-insulin-secretion-diabetes-research-npp09",
+        "section": "कानपुर",
+        "author": "अभिनव श्रीवास्तव",
+        "time": 1794545806359,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/l3qxabe8/IIT-Kanpur-discovery.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "46912843-2d42-43e2-a860-4aff3c5d0d42",
+        "headline": "रायपुर के भनपुरी में गजराज पॉलीमर फैक्ट्री में लगी भीषण आग, रातभर चला रेस्क्यू",
+        "slug": "chhattisgarh/raipur/raipur-bhanpuri-gajraj-polymer-factory-fire-aid23",
+        "section": "Raipur",
+        "author": "जयदास मानिकपुरी",
+        "time": 1794545793044,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/76ul3hgx/Bhanpuri-Raipur-Factory-Fire.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "cf617ceb-ec08-4c42-a1c8-1991a99e6150",
+        "headline": "छत्रपति संभाजीनगर में CCTV अनिवार्यता पर व्यापारियों का विरोध, पुलिस आदेश स्थगित करने की मांग",
+        "slug": "maharashtra/chhatrapati-sambhajinagar/chhatrapati-sambhajinagar-cctv-order-traders-protest-asl01",
+        "section": "छत्रपति संभाजीनगर",
+        "author": "आंचल लोखंडे",
+        "time": 1794545713120,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/rfnfoynd/CCTV-Mandatory.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "0f9b205f-5d66-435c-bc7b-fd9f98827776",
+        "headline": "शेयर बाजार में गिरावट से हाहाकार, सेंसेक्स 426 अंक टूटा; रियल्टी और ऑटो शेयरों में सबसे ज्यादा बिकवाली",
+        "slug": "business/stock-market-today-13-november-2026-sensex-nifty-fall-kns18",
+        "section": "बिज़नेस",
+        "author": "करुणा नंद शाहवाल",
+        "time": 1794545517170,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/8k2fk6ck/Stock-Market-Today-2.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "d3d9b37f-d526-40bb-ab06-01928945be4d",
+        "headline": "Chhath Puja 2026: छठ पर घर लौटने की होड़, ट्रेनें फुल, फ्लाइट का किराया 44 हजार पार; 77 बसें भी पड़ रही कम",
+        "slug": "photos/chhath-puja-2026-bihar-travel-rush-trains-flights-buses-asp28",
+        "section": "फोटो",
+        "author": "अंकिता पटेल",
+        "time": 1794545513285,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/yr3byd3q/Chhath-Puja.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "6ab752a8-9cc4-491c-a62a-c7c46b64e16c",
+        "headline": "महाराष्ट्र में साइबर ठगी का बड़ा खुलासा, 8 महीने में 2,119 करोड़ रुपये की चपत; रोजाना 8.72 करोड़ की लूट",
+        "slug": "maharashtra/mumbai/maharashtra-cyber-fraud-2026-2119-crore-scam-police-advisory-rgs12",
+        "section": "मुंबई",
+        "author": "रूपम सिंह",
+        "time": 1794545502675,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/0gaymzbu/Online-Fraud-Cases-Maharashtra.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "771fbd1b-db3c-4178-b989-8937abede651",
+        "headline": "छत्रपति संभाजीनगर में मंदिर ट्रस्ट की 41 एकड़ जमीन पर अवैध प्लॉटिंग का आरोप, सियासत गरमाई",
+        "slug": "maharashtra/chhatrapati-sambhajinagar/chhatrapati-sambhajinagar-jadhavwadi-temple-trust-illegal-plotting-dispute-asl01",
+        "section": "छत्रपति संभाजीनगर",
+        "author": "आंचल लोखंडे",
+        "time": 1794545033796,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/dac6wzl7/Illegal-Plotting-Maharashtra.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      }
+    ]
+  },
+  "ताजा खबर": {
+    "name": "ताजा खबर",
+    "template": "section",
+    "stories": [
+      {
+        "id": "7decf676-1c5c-4684-840a-6194ef16368d",
+        "headline": "IND vs NZ 4th ODI Live Score: न्यूजीलैंड को लगा छठा झटका, माइकल ब्रेसवेल 15 रन बनाकर आउट, स्कोर 260 के पार  ",
+        "slug": "sports/ind-vs-nz-4th-odi-live-update-mount-maunganui-bay-oval-india-vs-new-zealand-scorecard-shreyas-iyer-captain-rdu99",
+        "section": "खेल",
+        "author": "राहुल उपाध्याय",
+        "time": 1794545924222,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/8gah1w09/ind-vs-nz-32.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "7cf9732b-52c1-4757-a671-f3b584995474",
+        "headline": "IIT कानपुर की खोज: प्रतिरक्षा कोशिकाएं मिनटों में रोक सकती हैं इंसुलिन स्राव, मधुमेह अनुसंधान को मिली नई दिशा",
+        "slug": "uttar-pradesh/kanpur/iit-kanpur-pancreas-immune-cells-halt-insulin-secretion-diabetes-research-npp09",
+        "section": "कानपुर",
+        "author": "अभिनव श्रीवास्तव",
+        "time": 1794545806359,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/l3qxabe8/IIT-Kanpur-discovery.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "46912843-2d42-43e2-a860-4aff3c5d0d42",
+        "headline": "रायपुर के भनपुरी में गजराज पॉलीमर फैक्ट्री में लगी भीषण आग, रातभर चला रेस्क्यू",
+        "slug": "chhattisgarh/raipur/raipur-bhanpuri-gajraj-polymer-factory-fire-aid23",
+        "section": "Raipur",
+        "author": "जयदास मानिकपुरी",
+        "time": 1794545793044,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/76ul3hgx/Bhanpuri-Raipur-Factory-Fire.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "cf617ceb-ec08-4c42-a1c8-1991a99e6150",
+        "headline": "छत्रपति संभाजीनगर में CCTV अनिवार्यता पर व्यापारियों का विरोध, पुलिस आदेश स्थगित करने की मांग",
+        "slug": "maharashtra/chhatrapati-sambhajinagar/chhatrapati-sambhajinagar-cctv-order-traders-protest-asl01",
+        "section": "छत्रपति संभाजीनगर",
+        "author": "आंचल लोखंडे",
+        "time": 1794545713120,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/rfnfoynd/CCTV-Mandatory.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      }
+    ]
+  },
+  "वायरल": {
+    "name": "वायरल",
+    "template": "section",
+    "stories": [
+      {
+        "id": "df90d2a5-5bcf-4f00-bff9-3dfc24c8b81a",
+        "headline": "वाह किस्मत अच्छी थी, हाथी के पैरों तले कुचल जाने के बाद भी जिंदा बचा बाइक सवार; देखें रुह कपाने वाला VIDEO",
+        "slug": "viral/bike-rider-survives-elephant-attack-shocking-viral-video-ags10",
+        "section": "वायरल",
+        "author": "आशीष शुक्ला",
+        "time": 1794498743011,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/c4d0s6kx/viral-video.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "60efdba0-27c2-49cc-96a8-b5395939dd2e",
+        "headline": "नागालैंड की नन्ही बच्ची ने गाया राष्ट्रगान, VIDEO देख फैन हुए लोग; मंत्री तेमजेन इमना ने कही दिल छूने वाली बात",
+        "slug": "viral/nagaland-girl-sings-national-anthem-jan-gan-man-viral-video-temjen-imna-along-asp28",
+        "section": "वायरल",
+        "author": "अंकिता पटेल",
+        "time": 1794451309408,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/bdn0bvbz/Nagaland-Girl-Viral-Video.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "5b364654-a9a1-4d82-a446-38b670bf2cd6",
+        "headline": "TESLA धोने में ऐसा खोया जनाब कि 8 घंटे तक नहीं ली सांस, VIDEO देख बोले- भाई इतना प्यार तो खुद से भी नहीं करते",
+        "slug": "viral/tesla-car-cleaning-viral-video-8-hours-without-break-car-washing-ags10",
+        "section": "वायरल",
+        "author": "आशीष शुक्ला",
+        "time": 1794412634292,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-11/acd2r4py/Spent-time-washing-the-Tesla-car.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "b07b4768-2598-412e-b1bd-0a89b4d96480",
+        "headline": "हरियाणा में बिरयानी की रेहड़ी लगाने को लेकर बवाल, दो पक्षों में जमकर पथराव और फायरिंग; कई घायल देखें VIDEO",
+        "slug": "viral/haryana-nuh-biryani-stall-dispute-stone-pelting-firing-two-groups-clash-video-ags10",
+        "section": "वायरल",
+        "author": "आशीष शुक्ला",
+        "time": 1794332152760,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-10/nheui73o/viral-video.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "6df04f9d-3b51-4adb-89c5-92bb6d8b11ae",
+        "headline": "पाकिस्तान से हैं क्या? दिवाली को ईद बताकर बुरे फंसे मल्लिकार्जुन खरगे, वायरल VIDEO पर भड़के सोशल मीडिया यूजर्स",
+        "slug": "viral/mallikarjun-kharge-diwali-eid-viral-video-social-media-users-troll-congress-chief-pjs00",
+        "section": "वायरल",
+        "author": "प्रिया जैस",
+        "time": 1794201211462,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-09/mg1mfh9o/mallikarjun-kharge-trolling.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "06602218-bf77-4566-8838-2c54f9ad8542",
+        "headline": "विक्रोली स्टेशन पर लोकल के सामने कूदने ही वाला था युवक, यात्री ने ट्रैक पर उतरकर बचाई जान; देखें VIDEO",
+        "slug": "maharashtra/mumbai/mumbai-local-vikhroli-station-man-rescued-from-track-viral-video-gsp26",
+        "section": "मुंबई",
+        "author": "गोरक्ष पोफली",
+        "time": 1794072376383,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-07/dboxd3xc/vikhroli-station-mumbai-local-train-rescue.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "29785058-4ab3-4459-8ad0-f30435acb0c2",
+        "headline": "मुंबई लोकल में मारपीट के बाद चलती ट्रेन से गिरा यात्री? वायरल VIDEO की जांच में जुटी GRP की 5 टीमें",
+        "slug": "maharashtra/mumbai/mumbai-local-train-fight-viral-video-grp-investigation-gsp26",
+        "section": "मुंबई",
+        "author": "अखिलेश तिवारी",
+        "time": 1794064847307,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-07/ye8tbz7j/Mumbai-Local-Viral-Video.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "dc5105d9-dd30-4a78-b423-4927f1ede94d",
+        "headline": "बेटे के आए अच्छे नंबर तो बाप ने खुश होकर गिफ्ट में दे दी 2.30 करोड़ की BMW कार, अब क्या करेगा नाबालिग बेटा..?",
+        "slug": "viral/bardhaman-father-gifts-bmw-m4-son-class-9-exam-results-shamsuddin-awm08",
+        "section": "वायरल",
+        "author": "विजय कुमार तिवारी",
+        "time": 1794052397193,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-07/kksqwyiw/bmw-gift-to-son.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      }
+    ]
+  },
+  "वेब स्टोरीज़": {
+    "name": "वेब स्टोरीज़",
+    "template": "section",
+    "stories": [
+      {
+        "id": "06831b21-5a60-4c7d-a508-09c8bd1ce79f",
+        "headline": "दिल्ली-NCR के प्रदूषण से बचने में मदद करेंगी ये 5 SUV, केबिन में मिलेगा एयर प्यूरीफायर",
+        "slug": "ampstories/web-stories/these-5-suvs-will-help-you-stay-protected-from-pollution-in-delhi-ncr-in-cabin-air-purifier-srs13",
+        "section": "वेब स्टोरीज़",
+        "author": "सिमरन सिंह",
+        "time": 1794482910170,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/bn19rbh3/SUV-10.webp?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "1b8e1d1d-9cc4-4a97-af21-815f9e65924a",
+        "headline": "Winter Velvet Styling: सर्दियों में वेलवेट को ऐसे करें स्टाइल, क्लासी और रॉयल दिखेगा आपका लुक",
+        "slug": "ampstories/web-stories/how-to-style-velvet-in-winter-outfit-ideas-rrs05",
+        "section": "वेब स्टोरीज़",
+        "author": "रीता राय सागर",
+        "time": 1794476723495,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/af6hpelf/velevet-outfit-styling-1.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "2ba00f3d-143f-4d9d-9c80-21d5d62e7b28",
+        "headline": "भारत की ये 10 कारें क्रैश टेस्ट में रह गईं पीछे, खरीदने से पहले जरूर जानें सेफ्टी रेटिंग",
+        "slug": "ampstories/web-stories/these-10-cars-in-india-fell-short-in-crash-tests-check-their-safety-ratings-srs13",
+        "section": "वेब स्टोरीज़",
+        "author": "सिमरन सिंह",
+        "time": 1794474977224,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/33197hpm/Car-11.webp?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "0ea6710a-c290-40e2-b1aa-bd3566ef47ea",
+        "headline": "Toothbrush Hygiene Tips: अपना टूथब्रश कब बदलना चाहिए? इन 10 लक्षणों को देखकर सावधान हो जाएं",
+        "slug": "ampstories/web-stories/toothbrush-change-timing-signs-hygiene-tips-rrs05",
+        "section": "वेब स्टोरीज़",
+        "author": "रीता राय सागर",
+        "time": 1794473456491,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/a4lijpp8/Toothbrush-Hygiene-Tips.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "6a5c2afe-959d-4d9e-906e-39774bfc78cf",
+        "headline": "Winter Jacket for Women: सर्दियों में छा जाएगा आपका स्टाइल, ट्राई करें लॉन्ग कोट के ये लुक्स",
+        "slug": "ampstories/web-stories/fashion-trends-stylish-long-coat-and-jacket-looks-for-winter-asp28",
+        "section": "वेब स्टोरीज़",
+        "author": "अंकिता पटेल",
+        "time": 1794472465571,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/4wqptrtl/Long-Coat-for-Women.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "397f0693-60b6-493e-a12c-db0915f14740",
+        "headline": "Anirudh Ravichander Kavya Maran की शादी में दिखा मामा रजनीकांत का अनोखा अंदाज",
+        "slug": "ampstories/web-stories/kavya-maran-anirudh-ravichander-wedding-photos-rajnikanth-aan25",
+        "section": "वेब स्टोरीज़",
+        "author": "अपूर्वा नायक",
+        "time": 1794467474818,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/d4dv91no/Anirudh-Kavya-Maran-Wedding-Photos?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      }
+    ]
+  },
+  "Business + Sports + Crime": {
+    "name": "Business + Sports + Crime",
+    "template": "default",
+    "stories": []
+  },
+  "राज्य ": {
+    "name": "राज्य ",
+    "template": "default",
+    "stories": []
+  },
+  "धर्म": {
+    "name": "धर्म",
+    "template": "section",
+    "stories": [
+      {
+        "id": "404c2d13-27a8-4b45-a89d-840fb524959f",
+        "headline": "काशी में देव दिवाली पर ट्रैफिक रूट और पार्किंग की पूरी जानकारी, गंगा में चलेगी टू-वे बोट लेन",
+        "slug": "religion/complete-information-on-traffic-routes-and-parking-for-dev-diwali-in-kashi-ssk08",
+        "section": "धर्म",
+        "author": "सीमा कुमारी",
+        "time": 1794538192251,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/196miz39/Varanasi-Dev-Deepawali.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "b1b196e0-58b6-461e-871b-b864462c2060",
+        "headline": "Chhath Puja 2026: नहाय-खाय से शुरू हुआ छठ महापर्व, जानें पूजन विधि और 4 दिनों का पूरा कार्यक्रम",
+        "slug": "religion/the-great-festival-of-chhath-begins-with-nahay-khay-ssk08",
+        "section": "धर्म",
+        "author": "सीमा कुमारी",
+        "time": 1794536137637,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/bk7w0rox/Chhath-Puja-2026-2.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "7a030e56-f428-49fd-9ea5-136fddfe277e",
+        "headline": "नागुला चविथी 2026 कब है? जानें तारीख, पूजा का शुभ मुहूर्त और नाग देवता की आराधना का महत्व",
+        "slug": "religion/when-is-nagula-chavithi-2026-ssk08",
+        "section": "धर्म",
+        "author": "सीमा कुमारी",
+        "time": 1794528000000,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/z8kxt2mp/Nagula-Chavithi-2026.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "93321325-fe0e-44b6-8261-da4f2712ecd2",
+        "headline": "पीतल और स्टील ने छीना बांस कारीगरों का रोजगार, क्या बिना बांस के सूप के पूरी होगी छठ पूजा? जानें धार्मिक नियम",
+        "slug": "religion/chhath-puja-2026-brass-steel-soops-impact-traditional-bamboo-artisans-sns03",
+        "section": "धर्म",
+        "author": "स्निग्धा श्रीवास्तव",
+        "time": 1794501163000,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/xv2hma39/Chhath-Puja-2026.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "08a73688-b6fe-406e-bba1-193bca81b65e",
+        "headline": "कौन हैं छठी मइया और क्यों की जाती है उनकी पूजा? जानें छठ महापर्व की पौराणिक कथा और धार्मिक महत्व",
+        "slug": "religion/who-is-chhathi-maiya-and-why-is-she-worshipped-ssk08",
+        "section": "धर्म",
+        "author": "सीमा कुमारी",
+        "time": 1794495466955,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/5hkgfkxl/Chhathi-Maiya-Ki-Katha.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      }
+    ]
+  },
+  "वीडियो": {
+    "name": "वीडियो",
+    "template": "section",
+    "stories": [
+      {
+        "id": "e25e52df-e1ed-49a5-9689-117f78d8a991",
+        "headline": "बाइक का नंबर लगाकर सड़क पर दौड़ रही थी कार! सिवान के युवक के मोबाइल पर आया चालान- VIDEO",
+        "slug": "videos/bihar-fake-number-plate-bike-challan-tata-nexon-siwan-motihari-ars24",
+        "section": "वीडियो",
+        "author": "अर्पित शुक्ला",
+        "time": 1794502588267,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/c13au1ha/bihar-fake-number-plate-case.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "1a7e8e7d-d205-42af-8fdf-2bfbdc37f025",
+        "headline": "12 बजे सोकर उठते हैं, अली-अली चिल्लाते हैं... अखिलेश यादव पर ओपी राजभर का तीखा हमला, PDA पर भी उठाए सवाल",
+        "slug": "videos/om-prakash-rajbhar-attacks-akhilesh-yadav-over-pda-and-ayodhya-maa19",
+        "section": "वीडियो",
+        "author": "मनोज आर्या",
+        "time": 1794502226651,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/4e0nmk8s/op-rajbhar-on-akhilesh-yadav.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "f0c5e069-fe25-4864-b363-d74cbb2a9fa1",
+        "headline": "PDA के अल्फाबेट रोज बदलते हैं, सिर्फ DM अलायंस ही BJP को रोक पाएगा, AIMIM का अखिलेश पर बड़ा हमला",
+        "slug": "videos/aimim-shaukat-ali-attacks-akhilesh-yadav-pda-formula-pitches-dm-alliance-against-bjp-pjs00",
+        "section": "वीडियो",
+        "author": "प्रिया जैस",
+        "time": 1794457040681,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/lulfpqi9/Shaukat-Ali-AIMIM-Statement.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "55483b72-8f76-465b-a442-6164c4b62b94",
+        "headline": "सौ चूहे खा के बिल्ली चली हज को... अखिलेश यादव के अयोध्या दौरे पर भड़के ओपी राजभर- VIDEO",
+        "slug": "videos/om-prakash-rajbhar-slams-akhilesh-yadav-ayodhya-visit-comments-maa19",
+        "section": "वीडियो",
+        "author": "मनोज आर्या",
+        "time": 1794417973992,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-11/fw72ikdq/om-prakash-rajbhar.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "1c1751b0-a24a-4ad9-adb5-1803c25f5347",
+        "headline": "दिल्ली के नांगलोई में खुले नाले में गिरा 4 साल का मासूम, परिजनों का फूटा गुस्सा; देखें ग्राउंड रिपोर्ट",
+        "slug": "videos/nangloi-child-drain-accident-ground-report-video-khurshid-alam-pjs00",
+        "section": "वीडियो",
+        "author": "प्रिया जैस",
+        "time": 1794380440693,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-11/sjfttyrc/nangloi-child-drain-accident-video.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "5eafbe2a-617d-4df5-aba8-2e80a323aaed",
+        "headline": "अग्निपथ योजना में बदलाव की चर्चा, क्या 4 सालों तक शादी नहीं कर सकेंगे अग्निवीर? जानें पूरा सच",
+        "slug": "videos/agnipath-scheme-military-experts-concerns-and-changes-maa19",
+        "section": "वीडियो",
+        "author": "मनोज आर्या",
+        "time": 1794246253772,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-09/jdk7yf5r/agnipath-scheme.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "f329fbe9-063e-402e-a762-73476c00848d",
+        "headline": "चलती ट्रेन में पैंट्री बॉय की गुंड़ागर्दी, बोला यहां बैठना है तो खाना तो लेना पड़ेगा; देखें VIDEO",
+        "slug": "videos/train-pantry-boy-misbehavior-passenger-forced-food-purchase-viral-video-ags10",
+        "section": "वीडियो",
+        "author": "आशीष शुक्ला",
+        "time": 1794246169563,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-09/f2vq4kjd/viral-video.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "d1a233a9-3a1c-4b0e-9284-95435add5514",
+        "headline": "डिजिटल युग में पूरी दुनिया मना रही दिवाली, अखिलेश यादव का खास संदेश, बोले- समाज बदलने का लें संकल्प",
+        "slug": "videos/akhilesh-yadav-diwali-message-digital-era-viral-video-samajwadi-party-pjs00",
+        "section": "वीडियो",
+        "author": "प्रिया जैस",
+        "time": 1794204311916,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-09/jdg899g0/Akhilesh-Yadav-Diwali-Video.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      }
+    ]
+  },
+  "नवभारत विशेष": {
+    "name": "नवभारत विशेष",
+    "template": "section",
+    "stories": [
+      {
+        "id": "89f1ad57-ff11-41bd-a42a-b17fc69993d3",
+        "headline": "नवभारत संपादकीय: समान नागरिक संहिता पर विवाद, क्या आसान होगा महाराष्ट्र में यूसीसी लागू करना?",
+        "slug": "special-coverage/maharashtra-uniform-civil-code-ucc-fadnavis-owaisi-political-debate-asp28",
+        "section": "नवभारत विशेष",
+        "author": "अंकिता पटेल",
+        "time": 1794538100642,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/5lyt3a9b/Devendra-Fadnavis.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "9299933d-da47-4c7c-9f48-e1832cb97fbf",
+        "headline": "नवभारत विशेष: जेन्सेन हुआंग से जुड़ा हनी ट्रैप मामला, अब कारोबारियों पर भी जासूसी का खतरा?",
+        "slug": "special-coverage/nvidia-ceo-jensen-huang-honey-trap-espionage-technology-security-asp28",
+        "section": "नवभारत विशेष",
+        "author": "अंकिता पटेल",
+        "time": 1794536815089,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/tjwrj9kc/Jensen-Huang.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "b9af1a9d-37e0-4062-9f64-7b6b621e397d",
+        "headline": "Navbharat Nishanebaaz: BJP सरकारें चलाती हैं बुलडोजर, अदालती आदेश का नहीं असर",
+        "slug": "special-coverage/yogi-adityanath-bulldozer-politics-legal-debate-bjp-government-action-asp28",
+        "section": "नवभारत विशेष",
+        "author": "अंकिता पटेल",
+        "time": 1794535015628,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/n2qmpst3/navbharat-nishanebaaz-1.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "b53599d0-684f-481a-a5e8-3b65c7582adb",
+        "headline": "13 नवंबर का इतिहास: पेरिस आतंकी हमला, एक ही रात में गई थी 130 लोगों की जान",
+        "slug": "special-coverage/paris-terrorist-attacks-13-november-2015-bataclan-theatre-death-toll-asp28",
+        "section": "नवभारत विशेष",
+        "author": "अंकिता पटेल",
+        "time": 1794533781162,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/js9ku1cw/Paris-Terrorist-Attacks.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      }
+    ]
+  },
+  "मनोरंजन": {
+    "name": "मनोरंजन",
+    "template": "section",
+    "stories": [
+      {
+        "id": "2dfff920-0652-4f45-802b-762c5e57e551",
+        "headline": "‘Student of the Year-After Dark’ Review: शनाया कपूर की शानदार एक्टिंग, कॉलेज मिस्ट्री में सस्पेंस का तड़का!",
+        "slug": "entertainment/student-of-the-year-after-dark-review-shanaya-kapoor-performance-story-rating-ott-series-yss14",
+        "section": "मनोरंजन",
+        "author": "यति सिंह",
+        "time": 1794544200000,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/tmlubxp4/Student-of-the-Year-After-Dark.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "3d5eb5c0-1c66-4255-8cf0-0c9842f7d3e4",
+        "headline": "Bigg Boss 20: यंग डीएसए से पंगा लेकर फंसे स्काउट, पूरे सीजन के लिए नॉमिनेट होने के बाद मुंडवाया सिर",
+        "slug": "entertainment/bigg-boss-20-scout-yung-dsa-fight-full-season-nomination-head-shaved-yss14",
+        "section": "मनोरंजन",
+        "author": "यति सिंह",
+        "time": 1794542240107,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/d6nsp2gt/Bigg-Boss-20-Scout-Punishment.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "b305bb28-d566-452d-a469-d941aece6b40",
+        "headline": "रामायण' ने बॉक्स ऑफिस पर मचाया तहलका, 8वें दिन ही चट कर गई धुरंधर' समेत इन फिल्मों की बादशाहत!",
+        "slug": "photos/ramayana-day-8-box-office-collection-drishyam-3-border-2-dhurandhar-2-yss14",
+        "section": "फोटो",
+        "author": "यति सिंह",
+        "time": 1794539732718,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/l7sjdbol/Ramayana-Movie-Collection.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "3276db5e-ac00-4f09-9807-1076afe2b259",
+        "headline": "भोजपुरी फिल्म हे छठी मईया हमार मनसा पुरइह 2 यूट्यूब पर रिलीज, सुबह 6 बजे से मचा रही धूम",
+        "slug": "entertainment/he-chhathi-maiya-hamar-mansa-puraiha-2-bhojpuri-movie-youtube-release-yss14",
+        "section": "मनोरंजन",
+        "author": "यति सिंह",
+        "time": 1794537029829,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/tefshm19/He-Chhathi-Maiya-Hamar-Mansa-Puraiha-2.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "74e039b7-bef7-48c8-bbe8-4888ad833ed8",
+        "headline": "रामायण ने 8 दिनों में दुनियाभर में कमाए 1000 करोड़, ऐसा करने वाली बनी 11वीं भारतीय फिल्म",
+        "slug": "entertainment/ramayana-box-office-collection-day-8-crosses-1000-crore-worldwide-yss14",
+        "section": "मनोरंजन",
+        "author": "यति सिंह",
+        "time": 1794534837339,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/9niu1g3h/Ramayana-Movie-Collection.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "11389323-e891-4c29-b107-3f3829d3bf53",
+        "headline": "जब जूही चावला के इस फैसले ने डूबा दिया था उनका करियर, लेकिन करिश्मा कपूर को बना दिया सुपरस्टार ",
+        "slug": "entertainment/juhi-chawla-birthday-career-1997-dil-to-pagal-hai-film-rejection-yss14",
+        "section": "मनोरंजन",
+        "author": "यति सिंह",
+        "time": 1794531441158,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/ygh0piml/Juhi-Chawla-.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "db3a52a4-4cb7-4a01-bbe8-35008a4c0ee5",
+        "headline": "भोजपुरी एक्ट्रेस काजल राघवानी के घर छठ की तैयारी, पहली बार महापर्व का हिस्सा बनकर हुईं भावुक",
+        "slug": "entertainment/kajal-raghwani-first-chhath-vrat-chhathi-maiya-apology-post-suj05",
+        "section": "मनोरंजन",
+        "author": "सोनाली झा",
+        "time": 1794507105452,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/ygi9ez7j/Kajal-Raghwani-Chhath-Vrat.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "7d190e3f-c5e4-4f71-b3d5-8ce18edc3ea6",
+        "headline": "बीमारी के बाद KBC के सेट पर लौटे अमिताभ बच्चन, कंटेस्टेंट के सवाल पर बिग बी ने कही दिल छू लेने वाली बात",
+        "slug": "entertainment/amitabh-bachchan-returns-kbc-set-health-update-new-promo-suj05",
+        "section": "मनोरंजन",
+        "author": "सोनाली झा",
+        "time": 1794505492647,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/43yq68ua/Amitabh-Bachchan-KBC-Comeback.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      }
+    ]
+  },
+  "करियर": {
+    "name": "करियर",
+    "template": "section",
+    "stories": [
+      {
+        "id": "be4fa31d-e9e4-4e02-8f9b-cc37bb3e3537",
+        "headline": "छठ के बाद बिहार के युवाओं की लगेगी लॉटरी! 9 जिलों में रोजगार मेला, कई कंपनियां देंगी नौकरी; तारीखें जारी",
+        "slug": "career/bihar-rojgar-mela-2026-district-wise-dates-registration-kns18",
+        "section": "करियर",
+        "author": "करुणा नंद शाहवाल",
+        "time": 1794534773786,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/k4n1ubn6/Bihar-Rojgar-Mela-2026.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "6f7b8b2c-38bd-43af-a949-a16faf03c5f4",
+        "headline": "रेलवे में 10वीं पास के लिए निकली बंपर भर्ती, न परीक्षा होगी न इंटरव्यू, जानें कैसे करें आवेदन",
+        "slug": "career/indian-railway-apprentice-recruitment-2026-how-to-apply-online-akp05",
+        "section": "करियर",
+        "author": "अमन कुमार पाण्डेय",
+        "time": 1794465250552,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/58ytoyl3/Indian-Railway-Apprentice-Recruitment-2026.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "a34f3cc3-af2d-42c4-a6f7-063f43f51f38",
+        "headline": "भारतीय सेना में डॉक्टर बनने का मौका, आवेदन शुरू; जानें कौन और कैसे करें अप्लाई",
+        "slug": "career/indian-army-medical-officer-recruitment-2026-online-application-process-step-by-step-akp05",
+        "section": "करियर",
+        "author": "अमन कुमार पाण्डेय",
+        "time": 1794390444641,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-11/czcfb53g/Indian-Army-Medical-Officer-Recruitment-2026.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "c5c35ec2-29e3-4c50-8777-28af602517f3",
+        "headline": "CBSE बोर्ड परीक्षा 2027: 12वीं अकाउंटेंसी परीक्षा में कैलकुलेटर की मांग, दिल्ली हाई कोर्ट का CBSE को नोटिस",
+        "slug": "career/cbse-class-12-accountancy-calculator-use-delhi-high-court-notice-pjs00",
+        "section": "करियर",
+        "author": "प्रिया जैस",
+        "time": 1794378270928,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-11/5xxfqhc7/cbse-calculator-rule-notice.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "a2e15b6b-ee51-421e-b4f0-b4e559555112",
+        "headline": "आर्थिक तंगी नहीं बनेगी सपनों की राह में रोड़ा, अभ्युदय योजना से युवाओं को मिल रहा सफलता का मंच",
+        "slug": "uttar-pradesh/lucknow/abhyudaya-yojana-youth-success-platform-financial-constraint-not-hindrance-npp09",
+        "section": "लखनऊ",
+        "author": "राजेश कुमार मिश्र",
+        "time": 1794316140922,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-10/af088nl5/ABHIYUDAY-YOJNA.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "a6f32372-ab5e-4493-ac88-37fe3e2b2112",
+        "headline": "विरोध के बावजूद 20 दिसंबर को होगी TET परीक्षा, नहीं दिया एग्जाम तो क्या चली जाएगी सरकारी शिक्षकों की नौकरी?",
+        "slug": "madhya-pradesh/bhopal/mp-tet-exam-december-20-government-teachers-job-security-rules-srr21",
+        "section": "भोपाल",
+        "author": "सुधीर दंडोतिया",
+        "time": 1794313804429,
+        "imageUrl": "https://media.assettype.com/navbharatlive/import/wp-content/uploads/2025/09/TET-Exam.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      }
+    ]
+  },
+  "फोटो": {
+    "name": "फोटो",
+    "template": "section",
+    "stories": [
+      {
+        "id": "d3d9b37f-d526-40bb-ab06-01928945be4d",
+        "headline": "Chhath Puja 2026: छठ पर घर लौटने की होड़, ट्रेनें फुल, फ्लाइट का किराया 44 हजार पार; 77 बसें भी पड़ रही कम",
+        "slug": "photos/chhath-puja-2026-bihar-travel-rush-trains-flights-buses-asp28",
+        "section": "फोटो",
+        "author": "अंकिता पटेल",
+        "time": 1794545513285,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/yr3byd3q/Chhath-Puja.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "b305bb28-d566-452d-a469-d941aece6b40",
+        "headline": "रामायण' ने बॉक्स ऑफिस पर मचाया तहलका, 8वें दिन ही चट कर गई धुरंधर' समेत इन फिल्मों की बादशाहत!",
+        "slug": "photos/ramayana-day-8-box-office-collection-drishyam-3-border-2-dhurandhar-2-yss14",
+        "section": "फोटो",
+        "author": "यति सिंह",
+        "time": 1794539732718,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/l7sjdbol/Ramayana-Movie-Collection.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "957bf31b-9e77-45ad-a1b1-aa21518bd8b4",
+        "headline": "Chhath Puja 2026: छठ पूजा पर पहनें ये खूबसूरत एथनिक आउटफिट, सादगी में दिखेगा खास अंदाज",
+        "slug": "photos/festive-fashion-ideas-traditional-saree-and-suit-looks-for-chhath-puja-asp28",
+        "section": "फोटो",
+        "author": "अंकिता पटेल",
+        "time": 1794535660015,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/2knxacbo/Chhath-Puja-Outfit-Ideas.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "60605394-e13c-4a96-bf5a-25b9b30b3a41",
+        "headline": "Winter Superfood Amla: आंवला खाने के 5 तरीके, सिर्फ मुरब्बा ही नहीं इन डिशेज में भी करें शामिल",
+        "slug": "photos/winter-superfoods-5-ways-to-eat-amla-rrs05",
+        "section": "फोटो",
+        "author": "रीता राय सागर",
+        "time": 1794470139518,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/xb37ogy0/Amla-Recipes.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      }
+    ]
+  },
+  "लाइफस्टाइल": {
+    "name": "लाइफस्टाइल",
+    "template": "section",
+    "stories": [
+      {
+        "id": "0fab0911-3236-4ad7-b793-e4df914f392d",
+        "headline": "Amla Chutney Recipe: ठंड में जरूर बनाएं आंवले की खट्टी-मीठी चटनी, एक बार चखेंगे तो बार-बार खाने का करेगा मन",
+        "slug": "lifestyle/food/khatti-meethi-amla-chutney-recipe-rrs05",
+        "section": "खाना खजाना",
+        "author": "रीता राय सागर",
+        "time": 1794485108374,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/30haytup/Amla-ki-chutney.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "5e58ab95-cb48-44b0-8227-fda5961a48cc",
+        "headline": "Cinnamon Benefits: सुबह खाली पेट दालचीनी का पानी पीने से ब्लड शुगर पर क्या असर पड़ता है? जानें फायदे ",
+        "slug": "lifestyle/health/cinnamon-water-blood-sugar-benefits-risks-rrs05",
+        "section": "हेल्थ",
+        "author": "रीता राय सागर",
+        "time": 1794483561419,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/pborpk5p/Cinnamon-benefits.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "28e89273-a90c-4b08-8513-2fcd779c3f3f",
+        "headline": "Akshay Navami 2026: सिर्फ परंपरा नहीं, बदलते मौसम में इम्यूनिटी बढ़ाने का 'सुपरफूड' है आंवला प्रसाद",
+        "slug": "religion/amla-navami-2026-significance-puja-vidhi-katha-health-benefits-of-amla-sns03",
+        "section": "धर्म",
+        "author": "स्निग्धा श्रीवास्तव",
+        "time": 1794481831595,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/6w1catw5/Amla-Navami-2026.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "78523303-da0f-4876-bbfb-cb846b81c8da",
+        "headline": "Cracked Heels: सर्दियों में फटने लगी हैं एड़ियां? रात को सोने से पहले अपनाएं ये 5 आसान घरेलू उपाय",
+        "slug": "lifestyle/cracked-heels-home-remedies-winter-foot-care-rrs05",
+        "section": "लाइफस्टाइल",
+        "author": "रीता राय सागर",
+        "time": 1794478048707,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/xh86wbea/Cracked-Heels-Remedy.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "6a5c2afe-959d-4d9e-906e-39774bfc78cf",
+        "headline": "Winter Jacket for Women: सर्दियों में छा जाएगा आपका स्टाइल, ट्राई करें लॉन्ग कोट के ये लुक्स",
+        "slug": "ampstories/web-stories/fashion-trends-stylish-long-coat-and-jacket-looks-for-winter-asp28",
+        "section": "वेब स्टोरीज़",
+        "author": "अंकिता पटेल",
+        "time": 1794472465571,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/4wqptrtl/Long-Coat-for-Women.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "8f5822b2-8a4d-40bf-90fa-7c26779d6d70",
+        "headline": "Modern Gold Jewellery: प्लेन से लेकर कुंदन वर्क तक, महिलाओं के लिए खूबसूरत गोल्डन कड़ा डिजाइन",
+        "slug": "photos/latest-golden-kada-designs-for-women-modern-gold-jewellery-accessories-asp28",
+        "section": "फोटो",
+        "author": "अंकिता पटेल",
+        "time": 1794469742508,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/p7h4c4ro/Latest-Gold-Kada-Designs.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "19b8c2b8-7c64-4b3d-8547-575251c8d0a4",
+        "headline": "Meal Plan For Diabetes: डायबिटीज में नाश्ते से डिनर तक क्या खाएं? जानें एक दिन का आसान डाइट प्लान",
+        "slug": "lifestyle/health/world-diabetes-day-diabetes-diet-plan-indian-food-rrs05",
+        "section": "हेल्थ",
+        "author": "रीता राय सागर",
+        "time": 1794468217284,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/d851jsly/Diabetes-full-day-diet-plan.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "c0243eb3-791b-487c-b08d-4e2ad41b8af1",
+        "headline": "Kashmiri Shawl: विंटर कलेक्शन में शामिल करें कश्मीरी शॉल के ये 10 एलिगेंट डिजाइन",
+        "slug": "photos/beautiful-kashmiri-shawl-designs-for-winter-asp28",
+        "section": "फोटो",
+        "author": "अंकिता पटेल",
+        "time": 1794466976494,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/vgg8xvra/Kashmiri-Shawl-Designs.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      }
+    ]
+  },
+  "टेक्नॉलजी": {
+    "name": "टेक्नॉलजी",
+    "template": "section",
+    "stories": [
+      {
+        "id": "1c9fbb76-4eb3-45a6-92aa-df9f4fc46814",
+        "headline": "दुनियाभर में Microsoft, Outlook और Teams की सेवाएं फिर से बहाल, करीब 7 घंटे से था सर्वर डाउन",
+        "slug": "india/microsoft-outage-outlook-teams-services-restored-globally-sdr12",
+        "section": "देश",
+        "author": "सुप्रिया रानी",
+        "time": 1794543099899,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-13/uoh80cwr/Microsoft-Outage.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "63ca21cc-8348-4e6c-917e-b4f042248879",
+        "headline": "दिल्ली के छात्र ने ₹140 में बनाया एयर प्यूरीफायर, आम पंखे से घटेगा कमरे का प्रदूषण, मिला डायना अवॉर्ड",
+        "slug": "technology/student-from-delhi-has-created-an-air-purifier-for-140-reduce-indoor-pollution-diana-award-srs13",
+        "section": "टेक्नॉलजी",
+        "author": "सिमरन सिंह",
+        "time": 1794531600000,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/pjrr9gs5/Air-Purifier.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "a5234146-597b-4478-8393-05e578c36e07",
+        "headline": "WhatsApp Chats Transfer: Android से iPhone या iPhone से Android में कैसे ले जाएं पुरानी चैट? जानें आसान तरीका",
+        "slug": "technology/whatsapp-chat-transfer-move-old-chats-from-android-to-iphone-or-iphone-to-android-srs13",
+        "section": "टेक्नॉलजी",
+        "author": "सिमरन सिंह",
+        "time": 1794479876498,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/tr26hozf/WhatsApp.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "c1107ed5-31d2-4585-b265-1c4fe88daf46",
+        "headline": "अंतरिक्ष में एक परमाणु विस्फोट से खत्म हो सकते हैं 99% सैटेलाइट, नई स्टडी में सामने आया चौंकाने वाला खतरा",
+        "slug": "technology/nuclear-explosion-in-space-could-destroy-99-satellites-srs13",
+        "section": "टेक्नॉलजी",
+        "author": "सिमरन सिंह",
+        "time": 1794471261976,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/iczm62yp/Satellite.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "113da97f-7c0a-4862-920f-b0d23b6eec83",
+        "headline": "Samsung Galaxy S27 सीरीज में होगा बड़ा कैमरा बदलाव, 200MP कैमरा सेंसर के साथ आ सकता है नया Pro मॉडल",
+        "slug": "technology/camera-changes-coming-to-the-samsung-galaxy-s27-series-new-pro-model-with-a-200mp-sensor-srs13",
+        "section": "टेक्नॉलजी",
+        "author": "सिमरन सिंह",
+        "time": 1794468566485,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/2qztgzkk/Samsung-Galaxy-S27-Pro.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "82fbb384-c50c-4695-a50f-60aa1baa8447",
+        "headline": "Google Pixel Drop नवंबर 2026: Pixel 10 में आया Rambler AI, अब पुराने फोन में भी मिलेंगे नए फीचर्स",
+        "slug": "technology/google-pixel-drop-november-2026-rambler-ai-arrives-on-pixel-10-srs13",
+        "section": "टेक्नॉलजी",
+        "author": "सिमरन सिंह",
+        "time": 1794460769795,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-12/85rlamyc/Google-Pixel-Drop.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "7bac87ce-a9a9-46e5-b44d-22566182919c",
+        "headline": "Fake Bank Website: केनरा बैंक जैसी नकली साइट बनाकर 27 लाख की ठगी, ऐसे पहचानें असली और फर्जी वेबसाइट का अंतर",
+        "slug": "technology/fake-bank-website-27-lakh-swindled-via-a-fraudulent-site-mimicking-canara-bank-srs13",
+        "section": "टेक्नॉलजी",
+        "author": "सिमरन सिंह",
+        "time": 1794445200000,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-11/dhpft12w/Banking-Scam.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      },
+      {
+        "id": "c1d2ad20-5414-4e07-9499-16fe61714598",
+        "headline": "ChatGPT में अब दिखेंगे बिजनेस प्रोफाइल और AI एजेंट, कंपनियां सीधे ग्राहकों से कर सकेंगी बात",
+        "slug": "technology/chatgpt-will-now-feature-business-profiles-and-ai-agents-communicate-srs13",
+        "section": "टेक्नॉलजी",
+        "author": "सिमरन सिंह",
+        "time": 1794383978311,
+        "imageUrl": "https://media.assettype.com/navbharatlive/2026-11-11/0kfphcaq/Businesses-in-ChatGPT.jpg?w=600&auto=format,compress&fit=max",
+        "summary": ""
+      }
+    ]
+  }
+}

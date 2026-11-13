@@ -1,0 +1,50 @@
+import React from 'react';
+import { breakingNewsTicker } from '../data/navigation';
+
+export default function BreakingTicker() {
+  return (
+    <>
+      {/* ── Full-Width Breaking News Ticker Bar (Spreads across 100% screen width) ── */}
+      <div className="breaking-ticker-full-width">
+        <div className="stream-ticker-bar">
+          <div className="stream-ticker-badge">
+            ब्रेकिंग न्यूज़
+          </div>
+          <div className="stream-ticker-track">
+            <div className="stream-ticker-content">
+              {breakingNewsTicker.map((text, idx) => (
+                <span key={idx} className="stream-ticker-segment">
+                  <span className="ticker-pipe">|</span>
+                  <a href="#" className="ticker-link">{text}</a>
+                </span>
+              ))}
+              {/* Seamless continuous scroll duplicate */}
+              {breakingNewsTicker.map((text, idx) => (
+                <span key={`dup-${idx}`} className="stream-ticker-segment">
+                  <span className="ticker-pipe">|</span>
+                  <a href="#" className="ticker-link">{text}</a>
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Leaderboard Google Ad Banner (Strictly centered inside center container) ── */}
+      <div className="center-container leaderboard-ad-section">
+        <div className="leaderboard-ad-wrapper">
+          <div className="leaderboard-ad-box">
+            <img 
+              src="/assets/google-ad-banner.jpg" 
+              alt="Google Ads - More than clicks, your search ads start instant conversations" 
+              className="google-ad-banner-img"
+            />
+          </div>
+        </div>
+
+        {/* ── Thin 1px Horizontal Divider Line Matching Screenshot ── */}
+        <div className="lead-section-divider"></div>
+      </div>
+    </>
+  );
+}

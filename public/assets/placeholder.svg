@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb4949"/>
+      <stop offset="100%" stop-color="#de0c0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  <circle cx="400" cy="200" r="64" fill="#334155" opacity="0.6"/>
+  <path d="M375 175h50v50h-50z M360 235h80v12h-80z" fill="#94a3b8"/>
+  <rect x="250" y="300" width="300" height="14" rx="7" fill="#64748b" opacity="0.5"/>
+  <rect x="300" y="326" width="200" height="10" rx="5" fill="#64748b" opacity="0.3"/>
+  <rect x="30" y="30" width="120" height="32" rx="4" fill="url(#redGrad)"/>
+  <text x="90" y="52" fill="#ffffff" font-family="'Noto Sans', sans-serif" font-size="14" font-weight="bold" text-anchor="middle">NAVBHARAT</text>
+</svg>

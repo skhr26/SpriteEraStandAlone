@@ -1,0 +1,14 @@
+import React from 'react';
+import { Bell } from 'lucide-react';
+
+export default function NotificationBell() {
+  return (
+    <button 
+      className="floating-notification-bell" 
+      aria-label="सूचनाएं चालू करें"
+      title="सूचनाएं चालू करें"
+    >
+      <Bell size={20} color="#ffffff" strokeWidth={2.2} />
+    </button>
+  );
+}
