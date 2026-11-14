@@ -986,9 +986,9 @@ body.dark-mode .lead-section-wrapper {
 .hero-clean-title {
   margin: 0 0 8px;
   font-family: var(--lead-font);
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.3;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
   color: var(--text-heading);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1003,7 +1003,7 @@ body.dark-mode .lead-section-wrapper {
 .story-timestamp {
   display: block;
   font-family: var(--lead-font-latin);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 20px;
   color: var(--lead-time);
@@ -1039,12 +1039,12 @@ body.dark-mode .lead-section-wrapper {
   justify-content: space-between;
 }
 
-/* 88 x 50 thumbnail, 6px radius */
+/* 96 x 56 thumbnail, 4px radius */
 .clean-thumb {
-  width: 88px;
-  min-width: 88px;
-  height: 50px;
-  border-radius: 6px;
+  width: 96px;
+  min-width: 96px;
+  height: 56px;
+  border-radius: 4px;
   overflow: hidden;
   background-color: var(--bg-secondary);
   flex-shrink: 0;
@@ -1068,11 +1068,11 @@ body.dark-mode .lead-section-wrapper {
 }
 
 .clean-story-title {
-  margin: 0 0 9px;
+  margin: 0 0 6px;
   font-family: var(--lead-font);
   font-size: 16px;
-  font-weight: 600;
-  line-height: 1.3;
+  font-weight: 700;
+  line-height: 1.35;
   color: var(--text-heading);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1318,7 +1318,7 @@ body.dark-mode .mahtari-ad-banner-box {
 }
 
 .card-badge-pill {
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--primary-red);
   margin-bottom: 6px;
@@ -1662,9 +1662,10 @@ body.dark-mode .trio-more-pill {
 }
 
 .trio-story-title {
-  font-size: 13px;
+  font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
+  font-size: 14px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.4;
   color: var(--text-heading);
   margin: 0;
   display: -webkit-box;
@@ -1691,7 +1692,7 @@ body.dark-mode .trio-more-pill {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
   color: var(--text-heading);
   margin: 0;
@@ -1699,7 +1700,7 @@ body.dark-mode .trio-more-pill {
 
 .accent-bar {
   color: var(--primary-red);
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 900;
   line-height: 1;
 }
@@ -1707,10 +1708,11 @@ body.dark-mode .trio-more-pill {
 .black-more-pill {
   background: #000000;
   color: #ffffff;
-  font-size: 11px;
+  font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
+  font-size: 13px;
   font-weight: 700;
-  padding: 3px 12px;
-  border-radius: 12px;
+  padding: 5px 16px;
+  border-radius: 14px;
   text-decoration: none;
   white-space: nowrap;
   transition: opacity 0.2s ease, transform 0.15s ease;
@@ -1741,9 +1743,9 @@ body.dark-mode .black-more-pill {
 }
 
 /* ==========================================================================
-   Section: राज्य (State News - Left Vertical Tabs + 2x2 Grid + Compact Column)
-   Screenshot match: media_1794573255425_d1beb6e9.jpg
-   ========================================================================== */
+    Section: राज्य (State News - Left Vertical Tabs + 2x2 Grid + Compact Column)
+    Screenshot match: media_1794573255425_d1beb6e9.jpg
+    ========================================================================== */
 .state-section-container {
   margin-bottom: 38px;
 }
@@ -1921,9 +1923,10 @@ body.dark-mode .tab-active-arrow {
 }
 
 .state-card-title {
-  font-size: 13.5px;
+  font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
+  font-size: 14px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.4;
   color: var(--text-heading);
   margin-bottom: 4px;
   display: -webkit-box;
@@ -1937,7 +1940,9 @@ body.dark-mode .tab-active-arrow {
 }
 
 .state-card-meta {
-  font-size: 11px;
+  font-family: 'Roboto', 'Noto Sans', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
   color: var(--text-muted);
   display: flex;
   align-items: center;
@@ -1987,9 +1992,10 @@ body.dark-mode .tab-active-arrow {
 }
 
 .state-compact-title {
-  font-size: 13px;
+  font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.4;
   color: var(--text-heading);
   margin-bottom: 4px;
   display: -webkit-box;
@@ -2003,9 +2009,9 @@ body.dark-mode .tab-active-arrow {
 }
 
 /* ==========================================================================
-   Section: धर्म (Dharm - 3x2 Grid with 5 Cards + 1 Ad Placeholder)
-   Screenshot match: media_1794573395671_2dedc9e4.jpg
-   ========================================================================== */
+    Section: धर्म (Dharm - 3x2 Grid with 5 Cards + 1 Ad Placeholder)
+    Screenshot match: media_1794573395671_2dedc9e4.jpg
+    ========================================================================== */
 .dharm-section {
   margin-bottom: 38px;
 }
@@ -2013,7 +2019,7 @@ body.dark-mode .tab-active-arrow {
 .dharm-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
+  gap: 20px;
 }
 
 @media (min-width: 640px) {
@@ -2037,11 +2043,11 @@ body.dark-mode .tab-active-arrow {
 .dharm-img-wrap {
   position: relative;
   width: 100%;
-  padding-top: 56.4%;
-  border-radius: 4px;
+  padding-top: 62%;
+  border-radius: 6px;
   overflow: hidden;
   background-color: var(--bg-secondary);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .dharm-img-wrap img {
@@ -2059,13 +2065,14 @@ body.dark-mode .tab-active-arrow {
 }
 
 .dharm-title {
-  font-size: 13.5px;
-  font-weight: 700;
-  line-height: 1.35;
+  font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.4;
   color: var(--text-heading);
   margin-bottom: 4px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -2075,8 +2082,31 @@ body.dark-mode .tab-active-arrow {
 }
 
 .dharm-time {
-  font-size: 11px;
+  font-family: 'Roboto', 'Noto Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--text-muted);
+}
+
+/* Bottom 2-card centered row */
+.dharm-grid-bottom {
+  margin-top: 20px;
+  max-width: 66.666%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .dharm-grid-bottom {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 66.666%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .dharm-grid-bottom {
+    max-width: 100%;
+  }
 }
 
 .dharm-ad-placeholder {
@@ -2095,7 +2125,7 @@ body.dark-mode .dharm-ad-placeholder {
 }
 
 .ad-tag-corner {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
   border: 1px solid #cbd5e1;
   padding: 2px 6px;
@@ -2103,9 +2133,9 @@ body.dark-mode .dharm-ad-placeholder {
 }
 
 /* ==========================================================================
-   Section: वीडियो (Video - Greyish Background, 4x2 Grid of 8 Cards)
-   Screenshot match: media_1794573683006_9700391e.jpg
-   ========================================================================== */
+    Section: वीडियो (Video - Greyish Background, 4x2 Grid of 8 Cards)
+    Screenshot match: media_1794573683006_9700391e.jpg
+    ========================================================================== */
 .video-section-grey-wrap {
   background-color: #e5e7eb;
   padding: 24px 0 30px;
@@ -2165,9 +2195,10 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 .video-card-title {
-  font-size: 13px;
+  font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.4;
   color: var(--text-heading);
   margin-bottom: 4px;
   display: -webkit-box;
@@ -2181,14 +2212,16 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 .video-card-time {
-  font-size: 11px;
+  font-family: 'Roboto', 'Noto Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--text-muted);
 }
 
 /* ==========================================================================
-   Section: नवभारत विशेष (Vishesh - 4 Framed Editorial Cards)
-   Screenshot match: media_1794573779148_ae9910f0.jpg
-   ========================================================================== */
+    Section: नवभारत विशेष (Vishesh - 4 Framed Editorial Cards)
+    Screenshot match: media_1794573779148_ae9910f0.jpg
+    ========================================================================== */
 .vishesh-section {
   margin-bottom: 38px;
 }
@@ -2242,9 +2275,10 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 .vishesh-title {
-  font-size: 13px;
+  font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.4;
   color: var(--text-heading);
   margin-bottom: 4px;
   display: -webkit-box;
@@ -2258,14 +2292,16 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 .vishesh-time {
-  font-size: 11px;
+  font-family: 'Roboto', 'Noto Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--text-muted);
 }
 
 /* ==========================================================================
-   Section: मनोरंजन (Entertainment - 4x2 Grid of 8 Cards)
-   Screenshot match: media_1794573828065_36f7fe79.jpg
-   ========================================================================== */
+    Section: मनोरंजन (Entertainment - 4x2 Grid of 8 Cards)
+    Screenshot match: media_1794573828065_36f7fe79.jpg
+    ========================================================================== */
 .entertainment-section {
   margin-bottom: 38px;
 }
@@ -2319,9 +2355,10 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 .ent-card-title {
-  font-size: 13px;
+  font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.4;
   color: var(--text-heading);
   margin-bottom: 4px;
   display: -webkit-box;
@@ -2335,7 +2372,9 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 .ent-card-time {
-  font-size: 11px;
+  font-family: 'Roboto', 'Noto Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--text-muted);
 }
 
@@ -2397,11 +2436,11 @@ body.dark-mode .video-section-grey-wrap {
 .career-img-wrap {
   position: relative;
   width: 100%;
-  padding-top: 60%;
-  border-radius: 4px;
+  padding-top: 66%;
+  border-radius: 0;
   overflow: hidden;
   background-color: var(--bg-secondary);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .career-img-wrap img {
@@ -2419,13 +2458,14 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 .career-title {
-  font-size: 12.5px;
-  font-weight: 700;
-  line-height: 1.35;
+  font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.4;
   color: var(--text-heading);
   margin-bottom: 4px;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -2435,22 +2475,51 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 .career-time {
-  font-size: 10.5px;
+  font-family: 'Roboto', 'Noto Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--text-muted);
 }
 
 /* ==========================================================================
-   Section: फोटो (Photo Gallery - 4-Column Row)
-   Screenshot match: media_1794573940628_1415de14.jpg
+   Section: फोटो (Photo Gallery - Dark Strip with 4 Landscape Images)
+   Screenshot match: Navbharat Times reference
    ========================================================================== */
 .photo-section {
+  margin-bottom: 0;
+}
+
+.photo-section-dark-strip {
+  background-color: #1a1a1a;
+  padding: 20px 0 24px;
   margin-bottom: 38px;
+}
+
+.photo-section-dark-strip .section-header-divider-row {
+  margin-bottom: 14px;
+}
+
+.photo-section-dark-strip .section-title-bold {
+  color: #ffffff;
+}
+
+.photo-section-dark-strip .accent-bar {
+  color: var(--primary-red);
+}
+
+.photo-section-dark-strip .header-h-line {
+  background-color: #444444;
+}
+
+.photo-section-dark-strip .black-more-pill {
+  background: #333333;
+  color: #ffffff;
 }
 
 .photo-grid-4col {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 8px;
 }
 
 @media (min-width: 540px) {
@@ -2462,23 +2531,25 @@ body.dark-mode .video-section-grey-wrap {
 @media (min-width: 1024px) {
   .photo-grid-4col {
     grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    gap: 8px;
   }
 }
 
 .photo-card {
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
 .photo-img-wrap {
   position: relative;
   width: 100%;
-  padding-top: 56.4%;
-  border-radius: 4px;
+  padding-top: 75%;
+  border-radius: 0;
   overflow: hidden;
-  background-color: var(--bg-secondary);
-  margin-bottom: 8px;
+  background-color: #222;
+  margin-bottom: 0;
 }
 
 .photo-img-wrap img {
@@ -2492,17 +2563,19 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 .photo-card:hover .photo-img-wrap img {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 .photo-title {
+  font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.35;
-  color: var(--text-heading);
-  margin-bottom: 4px;
+  color: #ffffff;
+  margin-bottom: 0;
+  padding: 8px 4px 0;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -2512,8 +2585,11 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 .photo-time {
+  font-family: 'Roboto', 'Noto Sans', Arial, sans-serif;
   font-size: 11px;
-  color: var(--text-muted);
+  font-weight: 500;
+  color: #999999;
+  padding: 2px 4px 0;
 }
 
 /* ==========================================================================
@@ -2573,9 +2649,10 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 .card-title {
-  font-size: 13.5px;
+  font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.4;
   color: var(--text-heading);
   margin-bottom: 4px;
   display: -webkit-box;
@@ -2589,7 +2666,10 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 .card-time {
-  font-size: 11px;
+  font-family: 'Roboto', 'Noto Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 5px;
   color: var(--text-muted);
 }
 
@@ -2653,7 +2733,7 @@ body.dark-mode .footer-ad-box {
 }
 
 .footer-ad-label {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
 }
 
@@ -2702,7 +2782,7 @@ body.dark-mode .footer-big-logo {
 }
 
 .footer-col-heading {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
   color: var(--text-heading);
   margin-bottom: 12px;
@@ -2785,7 +2865,7 @@ body.dark-mode .footer-big-logo {
 }
 
 .store-name {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   font-family: sans-serif;
 }
