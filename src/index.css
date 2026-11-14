@@ -781,25 +781,14 @@ body.dark-mode .breaking-ticker-full-width {
   white-space: nowrap;
 }
 
-.stream-ticker-content {
-  display: inline-flex;
+.stream-ticker-marquee {
+  height: 100%;
+  display: flex !important;
   align-items: center;
-  white-space: nowrap;
-  animation: tickerSlide 35s linear infinite;
 }
 
-.stream-ticker-content:hover {
-  animation-play-state: paused;
-}
-
-@keyframes tickerSlide {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+.stream-ticker-marquee .rfm-marquee {
+  align-items: center;
 }
 
 .stream-ticker-segment {
