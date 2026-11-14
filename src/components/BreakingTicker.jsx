@@ -1,4 +1,5 @@
 import React from 'react';
+import Marquee from 'react-fast-marquee';
 import { breakingNewsTicker } from '../data/navigation';
 
 export default function BreakingTicker() {
@@ -11,21 +12,20 @@ export default function BreakingTicker() {
             ब्रेकिंग न्यूज़
           </div>
           <div className="stream-ticker-track">
-            <div className="stream-ticker-content">
+            <Marquee
+              speed={50}
+              pauseOnHover={true}
+              gradient={false}
+              autoFill={true}
+              className="stream-ticker-marquee"
+            >
               {breakingNewsTicker.map((text, idx) => (
                 <span key={idx} className="stream-ticker-segment">
                   <span className="ticker-pipe">|</span>
                   <a href="#" className="ticker-link">{text}</a>
                 </span>
               ))}
-              {/* Seamless continuous scroll duplicate */}
-              {breakingNewsTicker.map((text, idx) => (
-                <span key={`dup-${idx}`} className="stream-ticker-segment">
-                  <span className="ticker-pipe">|</span>
-                  <a href="#" className="ticker-link">{text}</a>
-                </span>
-              ))}
-            </div>
+            </Marquee>
           </div>
         </div>
       </div>
