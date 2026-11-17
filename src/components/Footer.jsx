@@ -16,34 +16,18 @@ export default function Footer() {
   return (
     <footer className="navbharat-site-footer" data-testid="footer">
       <div className="center-container">
-        
-        {/* 1. Top Section: 5 Slider Pill Dots */}
-        <div className="footer-slider-dots">
-          <span className="slider-dot active"></span>
-          <span className="slider-dot"></span>
-          <span className="slider-dot"></span>
-          <span className="slider-dot"></span>
-          <span className="slider-dot"></span>
-        </div>
 
-        {/* 2. Leaderboard Ad Placeholder Box */}
-        <div className="footer-ad-container">
-          <div className="footer-ad-box">
-            <span className="footer-ad-label">Advertisement</span>
-          </div>
-        </div>
+        {/* 0. Top Crisp Dark Divider Line (Matching user reference) */}
+        <div className="footer-top-divider"></div>
 
-        {/* Thin Divider Line */}
-        <div className="footer-divider-line"></div>
-
-        {/* 3. Centered Large Navbharat Logo */}
+        {/* 1. Centered Large Navbharat Logo (Matching media_1794729423429_1c7dc249.png) */}
         <div className="footer-brand-logo-wrap">
           <a href="#" className="footer-brand-link" aria-label="Navbharat Home">
             <img src="/assets/logo.png" alt="नवभारत" className="footer-big-logo" />
           </a>
         </div>
 
-        {/* 4. Directory Grid: 6 Columns matching screenshot */}
+        {/* 2. Directory Grid: 6 Columns matching screenshot */}
         <div className="footer-directory-grid">
           
           {/* Column 1: 'फॉलो करें' with 7 Circular Social Icons & App Store Badges */}

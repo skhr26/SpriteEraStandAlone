@@ -1,7 +1,7 @@
 import React from 'react';
 import { categoryTrioData } from '../data/categoryTrio';
 
-export default function CategoryTrio() {
+export default function CategoryTrio({ onNavigateToLatest }) {
   return (
     <section className="category-trio-section" aria-label="बिज़नेस, खेल और क्राइम">
       <div className="center-container">
@@ -15,7 +15,7 @@ export default function CategoryTrio() {
                   <span className="trio-red-bar">|</span>
                   <span className="trio-title-text">{col.title}</span>
                 </h2>
-                <a href={col.moreUrl} className="trio-more-pill">
+                <a href="#latest" onClick={onNavigateToLatest} className="trio-more-pill">
                   और पढ़ें
                 </a>
               </div>

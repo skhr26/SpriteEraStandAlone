@@ -2,7 +2,7 @@ import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import { webStoriesList } from '../data/webStories';
 
-export default function WebStories() {
+export default function WebStories({ onNavigateToLatest }) {
   return (
     <section className="news-grid-section" id="webstories" aria-label="Web Stories">
       <div className="center-container">
@@ -11,7 +11,7 @@ export default function WebStories() {
             <span className="section-indicator"></span>
             <h2 className="section-title">वेब स्टोरीज़</h2>
           </div>
-          <a href="#" className="section-more-link">
+          <a href="#latest" onClick={onNavigateToLatest} className="section-more-link">
             <span>और पढ़ें</span>
             <ChevronRight size={14} />
           </a>

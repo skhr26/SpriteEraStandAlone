@@ -1,35 +1,35 @@
 /**
  * Navbharat Vishesh Section Data (नवभारत विशेष)
- * Exact match to user screenshot media_1794573779148_ae9910f0.jpg
+ * Exact match to user screenshot media_1794735951861_93c96c27.jpg
  */
 
 export const visheshData = [
   {
     id: "vsh-1",
-    title: "नवभारत संपादकीय: समान नागरिक संहिता पर विवाद, क्या आसान होगा महाराष्ट्र में यूसीसी लागू करना?",
-    time: "10 hours ago",
-    imageUrl: "/assets/vishesh-0.jpg",
+    title: "EXPLAINER: हो सकता है बड़ा नुकसान...भोपाल में नकुलनाथ के शक्ति प्रदर्शन से कांग्रेस में बढ़ी गुटबाजी की चर्चा",
+    time: "21 hours ago",
+    imageUrl: "/assets/vishesh-explainer.jpg",
     url: "#"
   },
   {
     id: "vsh-2",
-    title: "नवभारत विशेष: जेन्सेन हुआंग से जुड़ा हनी ट्रैप मामला, अब कारोबारियों पर भी जासूसी का खतरा?",
-    time: "10 hours ago",
-    imageUrl: "/assets/vishesh-1.jpg",
+    title: "नवभारत संपादकीय: जम्मू-कश्मीर में फिर आतंकियों का हमला, दो SPO की अपहरण के बाद हत्या",
+    time: "14 नवंबर 2026",
+    imageUrl: "/assets/vishesh-editorial.jpg",
     url: "#"
   },
   {
     id: "vsh-3",
-    title: "Navbharat Nishanebaaz: BJP सरकारें चलाती हैं बुलडोजर, अदालती आदेश का नहीं असर",
-    time: "11 hours ago",
-    imageUrl: "/assets/vishesh-2.jpg",
+    title: "नवभारत विशेष: इजराइल में नई सरकार का गणित उलझा, आइजानकोट के सामने विचारधाराओं की चुनौती",
+    time: "14 नवंबर 2026",
+    imageUrl: "/assets/vishesh-israel.jpg",
     url: "#"
   },
   {
     id: "vsh-4",
-    title: "13 नवंबर का इतिहास: पेरिस आतंकी हमला, एक ही रात में गई थी 130 लोगों की जान",
-    time: "11 hours ago",
-    imageUrl: "/assets/vishesh-3.jpg",
+    title: "Navbharat Nishanebaaz: आंख नहीं मिलाने' की हेडलाइन, मोदी के सामने 2047 की डेडलाइन",
+    time: "14 नवंबर 2026",
+    imageUrl: "/assets/vishesh-nishanebaaz.jpg",
     url: "#"
   }
 ];

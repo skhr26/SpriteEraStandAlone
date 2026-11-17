@@ -1,7 +1,7 @@
 import React from 'react';
 import { lifestyleData } from '../data/lifestyle';
 
-export default function LifestyleSection() {
+export default function LifestyleSection({ onNavigateToLatest }) {
   return (
     <section className="lifestyle-section" aria-label="लाइफस्टाइल समाचार">
       <div className="center-container">
@@ -12,7 +12,7 @@ export default function LifestyleSection() {
             <span className="accent-bar">|</span>
             <span>लाइफस्टाइल</span>
           </h2>
-          <a href="#lifestyle" className="black-more-pill">और पढ़ें</a>
+          <a href="#latest" onClick={onNavigateToLatest} className="black-more-pill">और पढ़ें</a>
         </div>
 
         {/* 4 Cards Grid */}

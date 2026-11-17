@@ -88,7 +88,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -162,17 +162,20 @@ ul {
   --hdr-font: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
   --hdr-font-latin: 'Roboto', 'Mukta', 'Noto Sans', Arial, sans-serif;
 
-  --hdr-size-nav: 20px;
-  --hdr-size-epaper: 22px;
-  --hdr-size-signin: 19px;
-  --hdr-size-date: 14px;
+  --hdr-size-nav: 21.5px;
+  --hdr-size-epaper: 23.5px;
+  --hdr-size-signin: 20px;
+  --hdr-size-date: 15px;
 
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100%;
   background: var(--hdr-bg);
   color: var(--hdr-text);
   font-family: var(--hdr-font);
-  z-index: 1000;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
 body.dark-mode .site-header-custom {
@@ -383,15 +386,37 @@ body.dark-mode .custom-navbharat-logo {
 }
 
 /* ── LAYER 2 : NAVBAR ── */
+.site-header-custom.has-sticky-nav {
+  padding-bottom: 0;
+}
+
 .custom-bottom-navbar {
   width: 100%;
   height: var(--hdr-nav-h);
   background: var(--hdr-bg);
   border-bottom: 1px solid var(--hdr-border);
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 1000;
   box-shadow: none;
+  transition: background-color 0.25s ease;
+}
+
+.custom-bottom-navbar.is-sticky {
+  position: relative;
+  width: 100%;
+  background: var(--hdr-bg);
+}
+
+body.dark-mode .custom-bottom-navbar.is-sticky {
+  background: var(--hdr-bg);
+}
+
+.search-dropdown.sticky-search {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 9998;
 }
 
 .custom-bottom-navbar .navbar-full-width {
@@ -975,9 +1000,9 @@ body.dark-mode .lead-section-wrapper {
 .hero-clean-title {
   margin: 0 0 8px;
   font-family: var(--lead-font);
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.35;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.34;
   color: var(--text-heading);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1059,7 +1084,7 @@ body.dark-mode .lead-section-wrapper {
 .clean-story-title {
   margin: 0 0 6px;
   font-family: var(--lead-font);
-  font-size: 16px;
+  font-size: 20.5px;
   font-weight: 700;
   line-height: 1.35;
   color: var(--text-heading);
@@ -1156,12 +1181,37 @@ body.dark-mode .mahtari-ad-banner-box {
 }
 
 /* Floating Notification Bell */
-.floating-notification-bell {
+.floating-bell-container {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  width: 44px;
-  height: 44px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bell-new-tag {
+  position: absolute;
+  top: -6px;
+  right: -2px;
+  background-color: #f59e0b;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 9px;
+  font-weight: 900;
+  padding: 2px 5px;
+  border-radius: 3px;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  z-index: 10000;
+  pointer-events: none;
+}
+
+.floating-notification-bell {
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background-color: #1a73e8;
   color: #ffffff;
@@ -1169,7 +1219,6 @@ body.dark-mode .mahtari-ad-banner-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.2s ease;
@@ -1210,28 +1259,29 @@ body.dark-mode .mahtari-ad-banner-box {
 }
 
 .section-indicator {
-  width: 4px;
-  height: 22px;
+  width: 5px;
+  height: 28px;
   background-color: var(--primary-red);
   border-radius: 2px;
   display: inline-block;
 }
 
 .section-title {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 800;
   color: var(--text-heading);
-  letter-spacing: -0.2px;
+  letter-spacing: -0.3px;
 }
 
 .section-more-link {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14.5px;
+  font-weight: 700;
   color: var(--primary-red);
   display: flex;
   align-items: center;
   gap: 4px;
   transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
 .section-more-link:hover {
@@ -1315,9 +1365,9 @@ body.dark-mode .mahtari-ad-banner-box {
 }
 
 .card-v-title {
-  font-size: 15px;
+  font-size: 20.5px;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.38;
   color: var(--text-heading);
   margin-bottom: 10px;
   flex: 1;
@@ -1526,8 +1576,8 @@ body.dark-mode .mahtari-ad-banner-box {
 .trio-col-title {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 19px;
+  gap: 8px;
+  font-size: 28px;
   font-weight: 800;
   color: var(--text-heading);
   margin: 0;
@@ -1535,7 +1585,7 @@ body.dark-mode .mahtari-ad-banner-box {
 
 .trio-red-bar {
   color: var(--primary-red);
-  font-size: 22px;
+  font-size: 32px;
   font-weight: 900;
   line-height: 1;
 }
@@ -1547,13 +1597,14 @@ body.dark-mode .mahtari-ad-banner-box {
 .trio-more-pill {
   background: #000000;
   color: #ffffff;
-  font-size: 11.5px;
+  font-size: 13px;
   font-weight: 700;
-  padding: 3px 12px;
+  padding: 4px 14px;
   border-radius: 12px;
   text-decoration: none;
   white-space: nowrap;
   transition: opacity 0.2s ease, transform 0.15s ease;
+  cursor: pointer;
 }
 
 .trio-more-pill:hover {
@@ -1652,7 +1703,7 @@ body.dark-mode .trio-more-pill {
 
 .trio-story-title {
   font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.4;
   color: var(--text-heading);
@@ -1680,8 +1731,8 @@ body.dark-mode .trio-more-pill {
 .section-title-bold {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 22px;
+  gap: 8px;
+  font-size: 32px;
   font-weight: 800;
   color: var(--text-heading);
   margin: 0;
@@ -1689,7 +1740,7 @@ body.dark-mode .trio-more-pill {
 
 .accent-bar {
   color: var(--primary-red);
-  font-size: 26px;
+  font-size: 36px;
   font-weight: 900;
   line-height: 1;
 }
@@ -1698,13 +1749,14 @@ body.dark-mode .trio-more-pill {
   background: #000000;
   color: #ffffff;
   font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  padding: 5px 16px;
+  padding: 6px 18px;
   border-radius: 14px;
   text-decoration: none;
   white-space: nowrap;
   transition: opacity 0.2s ease, transform 0.15s ease;
+  cursor: pointer;
 }
 
 .black-more-pill:hover {
@@ -1749,8 +1801,8 @@ body.dark-mode .black-more-pill {
 .state-header-title {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 20px;
+  gap: 8px;
+  font-size: 30px;
   font-weight: 800;
   color: var(--text-heading);
   margin: 0;
@@ -1758,7 +1810,7 @@ body.dark-mode .black-more-pill {
 
 .state-red-bar {
   color: var(--primary-red);
-  font-size: 22px;
+  font-size: 34px;
   font-weight: 900;
   line-height: 1;
 }
@@ -1766,12 +1818,18 @@ body.dark-mode .black-more-pill {
 .state-more-btn {
   background: #000000;
   color: #ffffff;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
-  padding: 3px 12px;
+  padding: 4px 14px;
   border-radius: 12px;
   text-decoration: none;
   white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.state-more-btn:hover {
+  opacity: 0.85;
 }
 
 body.dark-mode .state-more-btn {
@@ -1913,7 +1971,7 @@ body.dark-mode .tab-active-arrow {
 
 .state-card-title {
   font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
-  font-size: 14px;
+  font-size: 18.5px;
   font-weight: 700;
   line-height: 1.4;
   color: var(--text-heading);
@@ -2055,7 +2113,7 @@ body.dark-mode .tab-active-arrow {
 
 .dharm-title {
   font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 750;
   line-height: 1.4;
   color: var(--text-heading);
@@ -2185,7 +2243,7 @@ body.dark-mode .video-section-grey-wrap {
 
 .video-card-title {
   font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 700;
   line-height: 1.4;
   color: var(--text-heading);
@@ -2208,11 +2266,47 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 /* ==========================================================================
-    Section: नवभारत विशेष (Vishesh - 4 Framed Editorial Cards)
-    Screenshot match: media_1794573779148_ae9910f0.jpg
+    Section: नवभारत विशेष (Vishesh - Pitch Black Strip 4-Card Editorial)
+    Screenshot match: media_1794735951861_93c96c27.jpg
     ========================================================================== */
 .vishesh-section {
-  margin-bottom: 38px;
+  background-color: #000000;
+  padding: 32px 0 36px 0;
+  margin: 36px 0;
+  width: 100%;
+}
+
+.vishesh-section .section-title-bold {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.vishesh-section .accent-bar {
+  color: var(--primary-red);
+  font-size: 36px;
+}
+
+.vishesh-section .header-h-line {
+  background-color: #374151;
+  height: 1px;
+}
+
+.vishesh-section .black-more-pill {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #71717a;
+  padding: 5px 16px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.vishesh-section .black-more-pill:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+  opacity: 1;
 }
 
 .vishesh-grid-4col {
@@ -2245,8 +2339,8 @@ body.dark-mode .video-section-grey-wrap {
   padding-top: 56.4%;
   border-radius: 4px;
   overflow: hidden;
-  background-color: var(--bg-secondary);
-  margin-bottom: 8px;
+  background-color: #111827;
+  margin-bottom: 10px;
 }
 
 .vishesh-img-wrap img {
@@ -2256,35 +2350,41 @@ body.dark-mode .video-section-grey-wrap {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  border-radius: 4px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .vishesh-card:hover .vishesh-img-wrap img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .vishesh-title {
   font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
-  font-size: 16px;
+  font-size: 18.5px;
   font-weight: 700;
-  line-height: 1.4;
-  color: var(--text-heading);
-  margin-bottom: 4px;
+  line-height: 1.38;
+  color: #ffffff;
+  margin-bottom: 6px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
+.vishesh-title a {
+  color: #ffffff;
+  transition: color 0.15s ease;
+}
+
 .vishesh-card:hover .vishesh-title a {
-  color: var(--primary-red);
+  color: #fb4949;
 }
 
 .vishesh-time {
   font-family: 'Roboto', 'Noto Sans', Arial, sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: var(--text-muted);
+  color: #9ca3af;
 }
 
 /* ==========================================================================
@@ -2345,7 +2445,7 @@ body.dark-mode .video-section-grey-wrap {
 
 .ent-card-title {
   font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 700;
   line-height: 1.4;
   color: var(--text-heading);
@@ -2448,7 +2548,7 @@ body.dark-mode .video-section-grey-wrap {
 
 .career-title {
   font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 750;
   line-height: 1.4;
   color: var(--text-heading);
@@ -2639,7 +2739,7 @@ body.dark-mode .video-section-grey-wrap {
 
 .card-title {
   font-family: 'Mukta', 'Noto Sans Devanagari', 'Mangal', sans-serif;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 700;
   line-height: 1.4;
   color: var(--text-heading);
@@ -2663,98 +2763,71 @@ body.dark-mode .video-section-grey-wrap {
 }
 
 /* ==========================================================================
-   OFFICIAL FOOTER (Exact Match to media_1794584679445_1724c3cb.png)
+   OFFICIAL FOOTER (Exact Match to media_1794729423429_1c7dc249.png)
    ========================================================================== */
 .navbharat-site-footer {
   background-color: var(--bg-card);
-  padding: 30px 0 20px;
-  margin-top: 40px;
-  border-top: 1px solid var(--border-color);
+  padding: 0 0 24px;
+  margin-top: 0;
+  border-top: none;
 }
 
-/* 1. Slider Dots */
-.footer-slider-dots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.slider-dot {
-  width: 28px;
-  height: 6px;
-  border-radius: 3px;
-  background-color: #cbd5e1;
-  transition: background-color 0.2s ease;
-}
-
-.slider-dot.active {
-  background-color: #000000;
-}
-
-body.dark-mode .slider-dot.active {
-  background-color: #ffffff;
-}
-
-/* 2. Leaderboard Ad Placeholder */
-.footer-ad-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-
-.footer-ad-box {
+/* 0. Top Crisp Dark Divider Line on all pages */
+.footer-top-divider {
   width: 100%;
-  max-width: 728px;
-  height: 90px;
-  background-color: #f3f4f6;
-  border: 1px solid #d1d5db;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 2px;
+  background-color: #262626; /* Dark crisp divider line */
+  margin: 0 0 38px 0;
 }
 
-body.dark-mode .footer-ad-box {
-  background-color: #1e293b;
-  border-color: #334155;
+body.dark-mode .footer-top-divider {
+  background-color: #52525b;
 }
 
-.footer-ad-label {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-.footer-divider-line {
-  width: 100%;
-  height: 1px;
-  background-color: var(--border-color);
-  margin-bottom: 28px;
-}
-
-/* 3. Centered Brand Logo */
+/* 1. Centered Brand Logo */
 .footer-brand-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 38px auto;
   text-align: center;
-  margin-bottom: 32px;
+}
+
+.footer-brand-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 
 .footer-big-logo {
-  height: 52px;
+  height: 105px;
   width: auto;
+  max-width: 360px;
   object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.2s ease;
+}
+
+.footer-brand-link:hover .footer-big-logo {
+  transform: scale(1.03);
 }
 
 body.dark-mode .footer-big-logo {
-  filter: brightness(1.2);
+  filter: brightness(0) invert(1);
 }
 
-/* 4. Directory Grid: 6 Columns */
+/* 2. Directory Grid: 6 Columns */
 .footer-directory-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 640px) {
@@ -2765,26 +2838,26 @@ body.dark-mode .footer-big-logo {
 
 @media (min-width: 1024px) {
   .footer-directory-grid {
-    grid-template-columns: 180px repeat(5, 1fr);
-    gap: 20px;
+    grid-template-columns: 190px repeat(5, 1fr);
+    gap: 24px;
   }
 }
 
 .footer-col-heading {
-  font-size: 16px;
+  font-size: 17.5px;
   font-weight: 800;
   color: var(--text-heading);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .footer-col-links {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .footer-col-links a {
-  font-size: 13.5px;
+  font-size: 15.5px;
   font-weight: 600;
   color: var(--text-heading);
   transition: color 0.15s ease;
@@ -2848,22 +2921,22 @@ body.dark-mode .footer-big-logo {
 }
 
 .store-sub {
-  font-size: 8px;
-  opacity: 0.8;
+  font-size: 9.5px;
+  opacity: 0.85;
   font-family: sans-serif;
 }
 
 .store-name {
-  font-size: 13px;
+  font-size: 14.5px;
   font-weight: 700;
   font-family: sans-serif;
 }
 
-/* 5. Bottom Legal Bar */
+/* 3. Bottom Legal Bar */
 .footer-legal-bar {
-  padding-top: 18px;
+  padding-top: 14px;
   padding-bottom: 12px;
-  border-top: 1px solid var(--border-color);
+  border-top: none;
   text-align: center;
 }
 
@@ -2877,8 +2950,8 @@ body.dark-mode .footer-big-logo {
 }
 
 .footer-legal-list a {
-  font-size: 13.5px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--text-heading);
   transition: color 0.2s ease;
 }
@@ -2889,8 +2962,8 @@ body.dark-mode .footer-big-logo {
 
 .legal-pipe {
   color: var(--border-color);
-  font-weight: 300;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 15px;
 }
 
 .footer-copyright-row {
@@ -2899,7 +2972,7 @@ body.dark-mode .footer-big-logo {
   align-items: center;
   justify-content: center;
   gap: 28px;
-  font-size: 12px;
+  font-size: 13.5px;
   color: var(--text-muted);
   line-height: 1.5;
 }
@@ -2963,7 +3036,18 @@ body.dark-mode .footer-big-logo {
   }
 
   .section-title {
-    font-size: 19px;
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  .section-title-bold {
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  .hero-clean-title {
+    font-size: 20px;
+    font-weight: 800;
   }
 
   .clean-thumb {
@@ -2973,6 +3057,420 @@ body.dark-mode .footer-big-logo {
   }
 
   .clean-story-title {
-    font-size: 13px;
+    font-size: 16.5px;
+    font-weight: 700;
   }
+}
+
+/* ==========================================================================
+   PAGE: Taza Khabar (ताजा खबर) - Exact Replica of User Screenshots
+   ========================================================================== */
+.taza-khabar-page {
+  padding: 8px 0 0;
+}
+
+/* 1. Top Leaderboard Ad Box */
+.taza-top-ad-container {
+  display: flex;
+  justify-content: center;
+  margin: 18px auto 20px;
+}
+
+.taza-top-ad-box {
+  width: 100%;
+  max-width: 728px;
+  height: 90px;
+  background-color: #f3f4f6;
+  border: 1px solid #111827;
+  border-radius: 2px;
+}
+
+body.dark-mode .taza-top-ad-box {
+  background-color: #1e293b;
+  border-color: #475569;
+}
+
+/* 2. Page Header */
+.taza-header-container {
+  margin-bottom: 18px;
+}
+
+.taza-breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.taza-breadcrumb-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.taza-breadcrumb-link:hover {
+  color: var(--primary-red);
+}
+
+.taza-breadcrumb-separator {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.taza-breadcrumb-current {
+  color: var(--primary-red);
+  font-weight: 600;
+}
+
+.taza-main-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.taza-red-accent {
+  color: var(--primary-red);
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* 3. Top 3-Column Lead Section */
+.taza-lead-3col-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 1024px) {
+  .taza-lead-3col-grid {
+    grid-template-columns: 1.15fr 1.15fr 1fr;
+    gap: 24px;
+  }
+}
+
+/* Featured Big Card */
+.taza-feat-card {
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.taza-feat-img-wrap {
+  display: block;
+  width: 303px;
+  max-width: 100%;
+  height: 170px;
+  aspect-ratio: 303 / 170;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.taza-feat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.taza-feat-card:hover .taza-feat-img {
+  transform: scale(1.02);
+}
+
+.taza-feat-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-heading);
+  margin: 10px 0 6px;
+}
+
+.taza-feat-title a {
+  color: inherit;
+  transition: color 0.15s ease;
+}
+
+.taza-feat-title a:hover {
+  color: var(--primary-red);
+}
+
+.taza-feat-time {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+/* Sub-items in Col 1, Col 2, Col 3 */
+.taza-col1-sublist,
+.taza-col2-feed,
+.taza-col3-feed {
+  display: flex;
+  flex-direction: column;
+}
+
+.taza-compact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.taza-compact-thumb-wrap {
+  width: 96px;
+  min-width: 96px;
+  height: 62px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #0f172a;
+  flex-shrink: 0;
+}
+
+.taza-compact-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.taza-compact-item:hover .taza-compact-thumb {
+  transform: scale(1.04);
+}
+
+.taza-compact-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.taza-compact-title {
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text-heading);
+  margin: 0 0 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.taza-compact-title a {
+  color: inherit;
+  transition: color 0.15s ease;
+}
+
+.taza-compact-title a:hover {
+  color: var(--primary-red);
+}
+
+.taza-compact-time {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+/* Column 3: 300x250 Ad Box */
+.taza-side-ad-box {
+  width: 100%;
+  max-width: 300px;
+  height: 250px;
+  background-color: #ffffff;
+  border: 1px solid #111827;
+  border-radius: 2px;
+  margin: 0 auto 16px auto;
+}
+
+body.dark-mode .taza-side-ad-box {
+  background-color: #1e293b;
+  border-color: #475569;
+}
+
+/* 4. 3x3 Articles Grid (Responsive full-column size matching latest screenshot) */
+.taza-articles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px 18px;
+  margin-bottom: 36px;
+}
+
+@media (min-width: 640px) {
+  .taza-articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .taza-articles-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 20px;
+  }
+}
+
+/* Card Container */
+.taza-story-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--bg-card);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.with-rounded-corners {
+  border-radius: 6px;
+}
+
+/* Hero Image Wrap: Naturally proportional 16:9 across grid column */
+.taza-hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.taza-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.taza-responsive-figure {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  margin: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: #0f172a;
+}
+
+.taza-responsive-figure img.taza-card-img,
+.taza-responsive-figure img.taza-feat-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.taza-story-card:hover .taza-card-img,
+.taza-feat-card:hover .taza-feat-img {
+  transform: scale(1.04);
+}
+
+/* Content Area */
+.taza-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0 4px;
+  background-color: transparent;
+}
+
+.taza-headline {
+  font-family: inherit;
+  font-size: 20.5px;
+  font-weight: 700;
+  line-height: 1.38;
+  color: var(--text-heading);
+  margin: 0 0 6px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.15s ease;
+}
+
+.taza-story-card:hover .taza-headline {
+  color: var(--primary-red);
+}
+
+/* Author & Timestamp */
+.taza-author-time {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.taza-author-name {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 13.5px;
+}
+
+.author-timestamp-bullet {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.arr--publish-time {
+  color: var(--text-muted);
+}
+
+.arr__timeago {
+  color: var(--text-muted);
+}
+
+/* 5. "और पढ़ें" Button */
+.taza-load-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 28px 0;
+}
+
+.taza-load-more-btn {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #71717a;
+  padding: 7px 26px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.taza-load-more-btn:hover {
+  background-color: #f4f4f5;
+  border-color: #111827;
+}
+
+body.dark-mode .taza-load-more-btn {
+  background: #1e293b;
+  color: #f8fafc;
+  border-color: #52525b;
+}
+
+body.dark-mode .taza-load-more-btn:hover {
+  background: #334155;
+  border-color: #f8fafc;
+}
+
+/* 6. Bottom Divider */
+.taza-bottom-divider {
+  width: 100%;
+  height: 2px;
+  background-color: #262626; /* Dark crisp divider line matching user reference */
+  margin: 0;
+}
+
+body.dark-mode .taza-bottom-divider {
+  background-color: #52525b;
 }

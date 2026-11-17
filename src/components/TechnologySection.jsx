@@ -1,7 +1,7 @@
 import React from 'react';
 import { technologyData } from '../data/technology';
 
-export default function TechnologySection() {
+export default function TechnologySection({ onNavigateToLatest }) {
   return (
     <section className="technology-section" aria-label="टेक्नॉलजी समाचार">
       <div className="center-container">
@@ -12,7 +12,7 @@ export default function TechnologySection() {
             <span className="accent-bar">|</span>
             <span>टेक्नॉलजी</span>
           </h2>
-          <a href="#technology" className="black-more-pill">और पढ़ें</a>
+          <a href="#latest" onClick={onNavigateToLatest} className="black-more-pill">और पढ़ें</a>
         </div>
 
         {/* 4 Cards Grid */}
