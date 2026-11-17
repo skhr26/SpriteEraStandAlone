@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { statesList, stateNewsData } from '../data/stateNews';
 
-export default function StateNews() {
+export default function StateNews({ onNavigateToLatest }) {
   const [activeTab, setActiveTab] = useState('maharashtra');
   const currentState = stateNewsData[activeTab] || stateNewsData.maharashtra;
 
@@ -15,7 +15,7 @@ export default function StateNews() {
             <span className="state-red-bar">|</span>
             <span>राज्य</span>
           </h2>
-          <a href="#states" className="state-more-btn">और पढ़ें</a>
+          <a href="#latest" onClick={onNavigateToLatest} className="state-more-btn">और पढ़ें</a>
         </div>
 
         {/* Layout: Left Vertical State Tabs + Right News Grid */}

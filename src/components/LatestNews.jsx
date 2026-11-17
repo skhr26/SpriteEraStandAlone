@@ -2,16 +2,26 @@ import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import { latestStories } from '../data/latest';
 
-export default function LatestNews() {
+export default function LatestNews({ onNavigateToLatest }) {
   return (
-    <section className="news-grid-section" id="latest" aria-label="Latest News Grid">
+    <section className="news-grid-section" id="latest-news-section" aria-label="Latest News Grid">
       <div className="center-container">
         <div className="section-header">
-          <div className="section-title-wrap">
+          <div 
+            className="section-title-wrap" 
+            style={{ cursor: 'pointer' }}
+            onClick={onNavigateToLatest}
+            title="ताजा खबर पेज देखें"
+          >
             <span className="section-indicator"></span>
             <h2 className="section-title">ताजा खबर</h2>
           </div>
-          <a href="#" className="section-more-link">
+          <a 
+            href="#latest" 
+            onClick={onNavigateToLatest} 
+            className="section-more-link"
+            title="ताजा खबर पेज देखें"
+          >
             <span>और पढ़ें</span>
             <ChevronRight size={14} />
           </a>
@@ -21,7 +31,12 @@ export default function LatestNews() {
         <div className="four-col-grid" data-slot="latest-news-grid">
           {latestStories.map((story) => (
             <article key={story.id} className="news-card-v" data-slot="news-card">
-              <a href="#" className="card-img-wrap">
+              <a 
+                href="#latest" 
+                onClick={onNavigateToLatest} 
+                className="card-img-wrap"
+                title="ताजा खबर पढ़ें"
+              >
                 <img 
                   src={story.imageUrl} 
                   alt={story.headline} 
@@ -32,7 +47,7 @@ export default function LatestNews() {
               <div className="card-v-body">
                 <span className="card-badge-pill">{story.section}</span>
                 <h3 className="card-v-title">
-                  <a href="#">{story.headline}</a>
+                  <a href="#latest" onClick={onNavigateToLatest}>{story.headline}</a>
                 </h3>
                 <div className="card-meta">
                   <span className="card-author">{story.author}</span>

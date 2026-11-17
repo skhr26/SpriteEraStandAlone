@@ -1,7 +1,7 @@
 import React from 'react';
 import { photoData } from '../data/photos';
 
-export default function PhotoSection() {
+export default function PhotoSection({ onNavigateToLatest }) {
   return (
     <section className="photo-section" aria-label="फोटो गैलरी">
       <div className="photo-section-dark-strip">
@@ -14,7 +14,7 @@ export default function PhotoSection() {
               <span>फोटो</span>
             </h2>
             <div className="header-h-line"></div>
-            <a href="#photos" className="black-more-pill">और पढ़ें</a>
+            <a href="#latest" onClick={onNavigateToLatest} className="black-more-pill">और पढ़ें</a>
           </div>
 
           {/* 4 Cards Grid */}

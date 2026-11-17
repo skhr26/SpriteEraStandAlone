@@ -1,7 +1,7 @@
 import React from 'react';
 import { dharmData } from '../data/dharm';
 
-export default function DharmSection() {
+export default function DharmSection({ onNavigateToLatest }) {
   const topRow = dharmData.slice(0, 3);
   const bottomRow = dharmData.slice(3, 5);
 
@@ -14,7 +14,7 @@ export default function DharmSection() {
             <span className="accent-bar">|</span>
             <span>धर्म</span>
           </h2>
-          <a href="#dharm" className="black-more-pill">और पढ़ें</a>
+          <a href="#latest" onClick={onNavigateToLatest} className="black-more-pill">और पढ़ें</a>
         </div>
 
         {/* Top Row: 3 cards */}
