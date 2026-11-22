@@ -1,54 +1,61 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { latestStories } from '../data/latest';
 
-export default function LatestNews({ onNavigateToLatest }) {
+export default function LatestNews() {
   return (
-    <section className="news-grid-section" id="latest-news-section" aria-label="Latest News Grid">
+    <section
+      className="news-grid-section"
+      id="latest-news-section"
+      aria-label="Latest News Grid"
+    >
       <div className="center-container">
         <div className="section-header">
-          <div 
-            className="section-title-wrap" 
-            style={{ cursor: 'pointer' }}
-            onClick={onNavigateToLatest}
+          <Link
+            to="/taazakhabar"
+            className="section-title-wrap"
             title="ताजा खबर पेज देखें"
           >
-            <span className="section-indicator"></span>
+            <span className="section-indicator" />
             <h2 className="section-title">ताजा खबर</h2>
-          </div>
-          <a 
-            href="#latest" 
-            onClick={onNavigateToLatest} 
+          </Link>
+
+          <Link
+            to="/taazakhabar"
             className="section-more-link"
             title="ताजा खबर पेज देखें"
           >
             <span>और पढ़ें</span>
             <ChevronRight size={14} />
-          </a>
+          </Link>
         </div>
 
-        {/* 4-Column Responsive Grid mapped via latestStories.map() */}
         <div className="four-col-grid" data-slot="latest-news-grid">
           {latestStories.map((story) => (
             <article key={story.id} className="news-card-v" data-slot="news-card">
-              <a 
-                href="#latest" 
-                onClick={onNavigateToLatest} 
+              <Link
+                to="/news"
                 className="card-img-wrap"
-                title="ताजा खबर पढ़ें"
+                title={story.headline}
+                aria-label={story.headline}
               >
-                <img 
-                  src={story.imageUrl} 
-                  alt={story.headline} 
+                <img
+                  src={story.imageUrl}
+                  alt={story.headline}
                   loading="lazy"
-                  onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
+                  onError={(event) => {
+                    event.currentTarget.src = '/assets/placeholder.svg';
+                  }}
                 />
-              </a>
+              </Link>
+
               <div className="card-v-body">
                 <span className="card-badge-pill">{story.section}</span>
+
                 <h3 className="card-v-title">
-                  <a href="#latest" onClick={onNavigateToLatest}>{story.headline}</a>
+                  <Link to="/news">{story.headline}</Link>
                 </h3>
+
                 <div className="card-meta">
                   <span className="card-author">{story.author}</span>
                   <span>•</span>
