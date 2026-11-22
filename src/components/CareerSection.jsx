@@ -1,7 +1,7 @@
 import React from 'react';
 import { careerData } from '../data/career';
 
-export default function CareerSection() {
+export default function CareerSection({ onNavigateToLatest }) {
   return (
     <section className="career-section" aria-label="करियर समाचार">
       <div className="center-container">
@@ -23,7 +23,7 @@ export default function CareerSection() {
             <span className="accent-bar">|</span>
             <span>करियर</span>
           </h2>
-          <a href="#career" className="black-more-pill">और पढ़ें</a>
+          <a href="#latest" onClick={onNavigateToLatest} className="black-more-pill">और पढ़ें</a>
         </div>
 
         {/* 6-Column Single Row Grid */}

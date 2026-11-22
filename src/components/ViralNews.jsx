@@ -3,7 +3,7 @@ import { ChevronRight, Play } from 'lucide-react';
 // Importing content from separate viral.js file as requested
 import { viralStories } from '../data/viral';
 
-export default function ViralNews() {
+export default function ViralNews({ onNavigateToLatest }) {
   return (
     <section className="news-grid-section" id="viral" aria-label="Viral News Grid">
       <div className="center-container">
@@ -12,7 +12,7 @@ export default function ViralNews() {
             <span className="section-indicator"></span>
             <h2 className="section-title">वायरल</h2>
           </div>
-          <a href="#" className="section-more-link">
+          <a href="#latest" onClick={onNavigateToLatest} className="section-more-link">
             <span>और पढ़ें</span>
             <ChevronRight size={14} />
           </a>

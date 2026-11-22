@@ -1,7 +1,7 @@
 import React from 'react';
 import { visheshData } from '../data/vishesh';
 
-export default function VisheshSection() {
+export default function VisheshSection({ onNavigateToLatest }) {
   return (
     <section className="vishesh-section" aria-label="नवभारत विशेष">
       <div className="center-container">
@@ -13,7 +13,7 @@ export default function VisheshSection() {
             <span>नवभारत विशेष</span>
           </h2>
           <div className="header-h-line"></div>
-          <a href="#vishesh" className="black-more-pill">और पढ़ें</a>
+          <a href="#latest" onClick={onNavigateToLatest} className="black-more-pill">और पढ़ें</a>
         </div>
 
         {/* 4 Cards Grid */}

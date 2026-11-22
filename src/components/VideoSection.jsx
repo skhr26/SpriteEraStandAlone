@@ -1,7 +1,7 @@
 import React from 'react';
 import { videoData } from '../data/videos';
 
-export default function VideoSection() {
+export default function VideoSection({ onNavigateToLatest }) {
   return (
     <section className="video-section-grey-wrap" aria-label="वीडियो समाचार">
       <div className="center-container">
@@ -12,7 +12,7 @@ export default function VideoSection() {
             <span className="accent-bar">|</span>
             <span>वीडियो</span>
           </h2>
-          <a href="#videos" className="black-more-pill">और पढ़ें</a>
+          <a href="#latest" onClick={onNavigateToLatest} className="black-more-pill">और पढ़ें</a>
         </div>
 
         {/* 4x2 Video Grid */}

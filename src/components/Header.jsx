@@ -38,13 +38,23 @@ const socials = [
   },
 ];
 
-export default function Header({ darkMode, setDarkMode, onOpenDrawer }) {
+export default function Header({ darkMode, setDarkMode, activePage, setActivePage, onNavigateToHome, onNavigateToLatest, onOpenDrawer }) {
   const [dateStr, setDateStr] = useState('');
   const [timeStr, setTimeStr] = useState('');
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+
+  // Sticky Navbar when scrolling past topbar
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 75);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Live date & time, e.g. "14 नव॰ 2026   10:36 AM"
   useEffect(() => {
@@ -77,7 +87,7 @@ export default function Header({ darkMode, setDarkMode, onOpenDrawer }) {
   };
 
   return (
-    <header className="site-header-custom">
+    <header className={`site-header-custom ${isSticky ? 'has-sticky-nav' : ''}`}>
       {/* ======================= LAYER 1: TOP BAR ======================= */}
       <div className="custom-topbar">
         <div className="navbar-full-width custom-topbar-inner">
@@ -111,7 +121,20 @@ export default function Header({ darkMode, setDarkMode, onOpenDrawer }) {
 
           {/* Center: logo */}
           <div className="custom-topbar-center">
-            <a href="#" className="custom-logo-wrap" aria-label="Navbharat Home">
+            <a 
+              href="#home" 
+              className="custom-logo-wrap" 
+              aria-label="Navbharat Home"
+              onClick={(e) => {
+                if (onNavigateToHome) {
+                  onNavigateToHome(e);
+                } else {
+                  e.preventDefault();
+                  if (setActivePage) setActivePage('home');
+                  window.location.hash = 'home';
+                }
+              }}
+            >
               <img src="/assets/logo.png" alt="नवभारत" className="custom-navbharat-logo" />
             </a>
           </div>
@@ -143,32 +166,71 @@ export default function Header({ darkMode, setDarkMode, onOpenDrawer }) {
       </div>
 
       {/* ======================= LAYER 2: NAVBAR ======================= */}
-      <nav className="custom-bottom-navbar">
+      <nav className={`custom-bottom-navbar ${isSticky ? 'is-sticky' : ''}`}>
         <div className="navbar-full-width custom-nav-inner">
           <ul className="custom-nav-menu">
-            {navCategories.map((item, idx) => (
-              <li
-                key={idx}
-                className={`custom-nav-item ${item.hasDropdown ? 'has-dropdown' : ''}`}
-                onMouseEnter={() => item.hasDropdown && setActiveDropdown(idx)}
-                onMouseLeave={() => item.hasDropdown && setActiveDropdown(null)}
-              >
-                <a href={item.href} className={`custom-nav-link ${item.active ? 'active' : ''}`}>
-                  <span>{item.name}</span>
-                  {item.hasDropdown && <ChevronDown size={14} className="dropdown-chevron" />}
-                </a>
+            {navCategories.map((item, idx) => {
+              const isItemActive = 
+                (item.name === "होम" && activePage === "home") ||
+                (item.name === "ताजा खबर" && activePage === "latest") ||
+                (activePage !== "home" && activePage !== "latest" && item.active);
 
-                {item.hasDropdown && activeDropdown === idx && (
-                  <ul className="custom-dropdown-menu">
-                    {item.subItems.map((sub, sIdx) => (
-                      <li key={sIdx} className="dropdown-item">
-                        <a href={sub.href}>{sub.name}</a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
+              return (
+                <li
+                  key={idx}
+                  className={`custom-nav-item ${item.hasDropdown ? 'has-dropdown' : ''}`}
+                  onMouseEnter={() => item.hasDropdown && setActiveDropdown(idx)}
+                  onMouseLeave={() => item.hasDropdown && setActiveDropdown(null)}
+                >
+                  <a 
+                    href={item.href} 
+                    className={`custom-nav-link ${isItemActive ? 'active' : ''}`}
+                    onClick={(e) => {
+                      if (item.name === "ताजा खबर") {
+                        if (onNavigateToLatest) {
+                          onNavigateToLatest(e);
+                        } else {
+                          e.preventDefault();
+                          if (setActivePage) setActivePage('latest');
+                          window.location.hash = 'latest';
+                        }
+                      } else if (item.name === "होम") {
+                        if (onNavigateToHome) {
+                          onNavigateToHome(e);
+                        } else {
+                          e.preventDefault();
+                          if (setActivePage) setActivePage('home');
+                          window.location.hash = 'home';
+                        }
+                      } else {
+                        // Switch back to home view when any other section is selected
+                        if (setActivePage) setActivePage('home');
+                      }
+                    }}
+                  >
+                    <span>{item.name}</span>
+                    {item.hasDropdown && <ChevronDown size={14} className="dropdown-chevron" />}
+                  </a>
+
+                  {item.hasDropdown && activeDropdown === idx && (
+                    <ul className="custom-dropdown-menu">
+                      {item.subItems.map((sub, sIdx) => (
+                        <li key={sIdx} className="dropdown-item">
+                          <a 
+                            href={sub.href}
+                            onClick={() => {
+                              if (setActivePage) setActivePage('home');
+                            }}
+                          >
+                            {sub.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
 
             {/* More (•••) */}
             <li
@@ -219,7 +281,7 @@ export default function Header({ darkMode, setDarkMode, onOpenDrawer }) {
       </nav>
 
       {/* Expandable search bar */}
-      <div className={`search-dropdown ${searchOpen ? 'open' : ''}`}>
+      <div className={`search-dropdown ${searchOpen ? 'open' : ''} ${isSticky ? 'sticky-search' : ''}`}>
         <div className="navbar-full-width">
           <form className="search-input-wrapper" onSubmit={handleSearchSubmit}>
             <input
