@@ -6,15 +6,16 @@ import BreakingTicker from './components/BreakingTicker';
 import Footer from './components/Footer';
 import NotificationBell from './components/NotificationBell';
 import HomePage from './pages/HomePage';
-import TazaKhabarPage from './pages/TazaKhabarPage';
+import AurPadhoPage from './pages/AurPadhoPage';
+import AurpadhoWebStoriesPage from './pages/AurpadhoWebStoriesPage';
 import CricketArticlePage from './pages/CricketArticlePage';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-  }, [pathname]);
+  }, [pathname, search]);
 
   return null;
 }
@@ -40,7 +41,13 @@ export default function App() {
 
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/taazakhabar" element={<TazaKhabarPage />} />
+          <Route path="/aur-padho" element={<AurPadhoPage />} />
+          <Route path="/aurpadho" element={<AurPadhoPage />} />
+          <Route path="/taazakhabar" element={<AurPadhoPage />} />
+          <Route path="/aurpadho-webstories" element={<AurpadhoWebStoriesPage />} />
+          <Route path="/aurpadhowebstories" element={<AurpadhoWebStoriesPage />} />
+          <Route path="/web-stories" element={<AurpadhoWebStoriesPage />} />
+          <Route path="/webstories" element={<AurpadhoWebStoriesPage />} />
           <Route path="/news" element={<CricketArticlePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

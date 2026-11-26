@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { videoData } from '../data/videos';
 
-export default function VideoSection({ onNavigateToLatest }) {
+export default function VideoSection() {
   return (
     <section className="video-section-grey-wrap" aria-label="वीडियो समाचार">
       <div className="center-container">
@@ -12,14 +13,20 @@ export default function VideoSection({ onNavigateToLatest }) {
             <span className="accent-bar">|</span>
             <span>वीडियो</span>
           </h2>
-          <a href="#latest" onClick={onNavigateToLatest} className="black-more-pill">और पढ़ें</a>
+          <Link 
+            to="/aur-padho?category=वीडियो" 
+            state={{ category: "वीडियो" }} 
+            className="black-more-pill"
+          >
+            और पढ़ें
+          </Link>
         </div>
 
         {/* 4x2 Video Grid */}
         <div className="video-grid-4col">
           {videoData.map((item) => (
             <article key={item.id} className="video-item-card">
-              <a href={item.url} className="video-thumb-link">
+              <Link to="/news" className="video-thumb-link">
                 <div className="video-thumb-wrap">
                   <img 
                     src={item.imageUrl} 
@@ -28,10 +35,10 @@ export default function VideoSection({ onNavigateToLatest }) {
                     onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
                   />
                 </div>
-              </a>
+              </Link>
               <div className="video-card-body">
                 <h3 className="video-card-title">
-                  <a href={item.url}>{item.title}</a>
+                  <Link to="/news">{item.title}</Link>
                 </h3>
                 <div className="video-card-time">{item.time}</div>
               </div>

@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { lifestyleData } from '../data/lifestyle';
 
-export default function LifestyleSection({ onNavigateToLatest }) {
+export default function LifestyleSection() {
   return (
     <section className="lifestyle-section" aria-label="लाइफस्टाइल समाचार">
       <div className="center-container">
@@ -12,14 +13,20 @@ export default function LifestyleSection({ onNavigateToLatest }) {
             <span className="accent-bar">|</span>
             <span>लाइफस्टाइल</span>
           </h2>
-          <a href="#latest" onClick={onNavigateToLatest} className="black-more-pill">और पढ़ें</a>
+          <Link 
+            to="/aur-padho?category=लाइफस्टाइल" 
+            state={{ category: "लाइफस्टाइल" }} 
+            className="black-more-pill"
+          >
+            और पढ़ें
+          </Link>
         </div>
 
         {/* 4 Cards Grid */}
         <div className="standard-grid-4col">
           {lifestyleData.map((item) => (
             <article key={item.id} className="standard-news-card">
-              <a href={item.url} className="card-img-link">
+              <Link to="/news" className="card-img-link">
                 <div className="card-img-wrap">
                   <img 
                     src={item.imageUrl} 
@@ -28,10 +35,10 @@ export default function LifestyleSection({ onNavigateToLatest }) {
                     onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
                   />
                 </div>
-              </a>
+              </Link>
               <div className="card-body">
                 <h3 className="card-title">
-                  <a href={item.url}>{item.title}</a>
+                  <Link to="/news">{item.title}</Link>
                 </h3>
                 <div className="card-time">{item.time}</div>
               </div>

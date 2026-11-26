@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { webStoriesList } from '../data/webStories';
 
-export default function WebStories({ onNavigateToLatest }) {
+export default function WebStories() {
   return (
     <section className="news-grid-section" id="webstories" aria-label="Web Stories">
       <div className="center-container">
@@ -11,18 +12,22 @@ export default function WebStories({ onNavigateToLatest }) {
             <span className="section-indicator"></span>
             <h2 className="section-title">वेब स्टोरीज़</h2>
           </div>
-          <a href="#latest" onClick={onNavigateToLatest} className="section-more-link">
+          <Link 
+            to="/aurpadho-webstories" 
+            className="section-more-link"
+            title="और पढ़ें"
+          >
             <span>और पढ़ें</span>
             <ChevronRight size={14} />
-          </a>
+          </Link>
         </div>
 
         {/* 6 Portrait (9:16) Cards mapped via webStoriesList.map() */}
         <div className="web-stories-slider" data-slot="web-stories-grid">
           {webStoriesList.map((story) => (
-            <a 
+            <Link 
               key={story.id} 
-              href="#" 
+              to="/news" 
               className="web-story-card" 
               data-slot="web-story"
             >
@@ -41,7 +46,7 @@ export default function WebStories({ onNavigateToLatest }) {
                 <span className="web-story-tag">{story.section}</span>
                 <h3 className="web-story-title">{story.headline}</h3>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

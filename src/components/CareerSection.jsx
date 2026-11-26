@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { careerData } from '../data/career';
 
-export default function CareerSection({ onNavigateToLatest }) {
+export default function CareerSection() {
   return (
     <section className="career-section" aria-label="करियर समाचार">
       <div className="center-container">
@@ -23,14 +24,20 @@ export default function CareerSection({ onNavigateToLatest }) {
             <span className="accent-bar">|</span>
             <span>करियर</span>
           </h2>
-          <a href="#latest" onClick={onNavigateToLatest} className="black-more-pill">और पढ़ें</a>
+          <Link 
+            to="/aur-padho?category=करियर" 
+            state={{ category: "करियर" }} 
+            className="black-more-pill"
+          >
+            और पढ़ें
+          </Link>
         </div>
 
         {/* 6-Column Single Row Grid */}
         <div className="career-grid-6col">
           {careerData.map((item) => (
             <article key={item.id} className="career-card">
-              <a href={item.url} className="career-img-link">
+              <Link to="/news" className="career-img-link">
                 <div className="career-img-wrap">
                   <img 
                     src={item.imageUrl} 
@@ -39,10 +46,10 @@ export default function CareerSection({ onNavigateToLatest }) {
                     onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
                   />
                 </div>
-              </a>
+              </Link>
               <div className="career-body">
                 <h3 className="career-title">
-                  <a href={item.url}>{item.title}</a>
+                  <Link to="/news">{item.title}</Link>
                 </h3>
                 <div className="career-time">{item.time}</div>
               </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   XCircleIcon, 
   YouTubeCircleIcon, 
@@ -22,9 +23,9 @@ export default function Footer() {
 
         {/* 1. Centered Large Navbharat Logo (Matching media_1794729423429_1c7dc249.png) */}
         <div className="footer-brand-logo-wrap">
-          <a href="#" className="footer-brand-link" aria-label="Navbharat Home">
+          <Link to="/" className="footer-brand-link" aria-label="Navbharat Home">
             <img src="/assets/logo.png" alt="नवभारत" className="footer-big-logo" />
-          </a>
+          </Link>
         </div>
 
         {/* 2. Directory Grid: 6 Columns matching screenshot */}
@@ -75,17 +76,33 @@ export default function Footer() {
             <div key={idx} className="footer-col">
               <h4 className="footer-col-heading">{sec.title}</h4>
               <ul className="footer-col-links">
-                {sec.links.map((link, lIdx) => (
-                  <li key={lIdx}>
-                    <a 
-                      href={link.href}
-                      target={link.external ? "_blank" : undefined}
-                      rel={link.external ? "noopener noreferrer" : undefined}
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
+                {sec.links.map((link, lIdx) => {
+                  const isWs = link.name === "वेब स्टोरीज़" || link.name === "वेब स्टोरीज";
+                  const targetLink = isWs 
+                    ? "/aurpadho-webstories" 
+                    : `/aur-padho?category=${encodeURIComponent(link.name)}`;
+
+                  return (
+                    <li key={lIdx}>
+                      {link.external ? (
+                        <a 
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.name}
+                        </a>
+                      ) : (
+                        <Link 
+                          to={targetLink}
+                          state={{ category: link.name }}
+                        >
+                          {link.name}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

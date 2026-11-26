@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
 import { breakingNewsTicker } from '../data/navigation';
 
@@ -22,7 +23,7 @@ export default function BreakingTicker() {
               {breakingNewsTicker.map((text, idx) => (
                 <span key={idx} className="stream-ticker-segment">
                   <span className="ticker-pipe">|</span>
-                  <a href="#" className="ticker-link">{text}</a>
+                  <Link to="/news" className="ticker-link">{text}</Link>
                 </span>
               ))}
             </Marquee>

@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { visheshData } from '../data/vishesh';
 
-export default function VisheshSection({ onNavigateToLatest }) {
+export default function VisheshSection() {
   return (
     <section className="vishesh-section" aria-label="नवभारत विशेष">
       <div className="center-container">
@@ -13,14 +14,20 @@ export default function VisheshSection({ onNavigateToLatest }) {
             <span>नवभारत विशेष</span>
           </h2>
           <div className="header-h-line"></div>
-          <a href="#latest" onClick={onNavigateToLatest} className="black-more-pill">और पढ़ें</a>
+          <Link 
+            to="/aur-padho?category=नवभारत विशेष" 
+            state={{ category: "नवभारत विशेष" }} 
+            className="black-more-pill"
+          >
+            और पढ़ें
+          </Link>
         </div>
 
         {/* 4 Cards Grid */}
         <div className="vishesh-grid-4col">
           {visheshData.map((item) => (
             <article key={item.id} className="vishesh-card">
-              <a href={item.url} className="vishesh-img-link">
+              <Link to="/news" className="vishesh-img-link">
                 <div className="vishesh-img-wrap">
                   <img 
                     src={item.imageUrl} 
@@ -29,10 +36,10 @@ export default function VisheshSection({ onNavigateToLatest }) {
                     onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
                   />
                 </div>
-              </a>
+              </Link>
               <div className="vishesh-body">
                 <h3 className="vishesh-title">
-                  <a href={item.url}>{item.title}</a>
+                  <Link to="/news">{item.title}</Link>
                 </h3>
                 <div className="vishesh-time">{item.time}</div>
               </div>

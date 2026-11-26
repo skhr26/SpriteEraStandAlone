@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { statesList, stateNewsData } from '../data/stateNews';
 
-export default function StateNews({ onNavigateToLatest }) {
+export default function StateNews() {
   const [activeTab, setActiveTab] = useState('maharashtra');
   const currentState = stateNewsData[activeTab] || stateNewsData.maharashtra;
 
@@ -15,7 +16,13 @@ export default function StateNews({ onNavigateToLatest }) {
             <span className="state-red-bar">|</span>
             <span>राज्य</span>
           </h2>
-          <a href="#latest" onClick={onNavigateToLatest} className="state-more-btn">और पढ़ें</a>
+          <Link 
+            to="/aur-padho?category=राज्य" 
+            state={{ category: "राज्य" }} 
+            className="state-more-btn"
+          >
+            और पढ़ें
+          </Link>
         </div>
 
         {/* Layout: Left Vertical State Tabs + Right News Grid */}
@@ -48,17 +55,17 @@ export default function StateNews({ onNavigateToLatest }) {
             <div className="state-cards-grid">
               {currentState.cards.map((card) => (
                 <article key={card.id} className="state-lead-card">
-                  <div className="state-card-thumb-wrap">
+                  <Link to="/news" className="state-card-thumb-wrap">
                     <img 
                       src={card.imageUrl} 
                       alt={card.title} 
                       loading="lazy"
                       onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
                     />
-                  </div>
+                  </Link>
                   <div className="state-card-body">
                     <h3 className="state-card-title">
-                      <a href="#">{card.title}</a>
+                      <Link to="/news">{card.title}</Link>
                     </h3>
                     <div className="state-card-meta">
                       <span className="state-author">{card.author}</span>
@@ -74,17 +81,17 @@ export default function StateNews({ onNavigateToLatest }) {
             <div className="state-compact-col">
               {currentState.compact.map((story) => (
                 <article key={story.id} className="state-compact-story">
-                  <div className="state-compact-thumb">
+                  <Link to="/news" className="state-compact-thumb">
                     <img 
                       src={story.imageUrl} 
                       alt={story.title} 
                       loading="lazy"
                       onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
                     />
-                  </div>
+                  </Link>
                   <div className="state-compact-body">
                     <h3 className="state-compact-title">
-                      <a href="#">{story.title}</a>
+                      <Link to="/news">{story.title}</Link>
                     </h3>
                     <div className="state-card-meta">
                       <span className="state-author">{story.author}</span>

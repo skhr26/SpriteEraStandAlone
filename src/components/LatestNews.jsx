@@ -11,19 +11,16 @@ export default function LatestNews() {
     >
       <div className="center-container">
         <div className="section-header">
-          <Link
-            to="/taazakhabar"
-            className="section-title-wrap"
-            title="ताजा खबर पेज देखें"
-          >
+          <div className="section-title-wrap">
             <span className="section-indicator" />
             <h2 className="section-title">ताजा खबर</h2>
-          </Link>
+          </div>
 
           <Link
-            to="/taazakhabar"
+            to="/aur-padho?category=ताज़ा खबर"
+            state={{ category: "ताज़ा खबर" }}
             className="section-more-link"
-            title="ताजा खबर पेज देखें"
+            title="और पढ़ें"
           >
             <span>और पढ़ें</span>
             <ChevronRight size={14} />

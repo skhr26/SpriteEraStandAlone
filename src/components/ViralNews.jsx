@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronRight, Play } from 'lucide-react';
 // Importing content from separate viral.js file as requested
 import { viralStories } from '../data/viral';
 
-export default function ViralNews({ onNavigateToLatest }) {
+export default function ViralNews() {
   return (
     <section className="news-grid-section" id="viral" aria-label="Viral News Grid">
       <div className="center-container">
@@ -12,17 +13,21 @@ export default function ViralNews({ onNavigateToLatest }) {
             <span className="section-indicator"></span>
             <h2 className="section-title">वायरल</h2>
           </div>
-          <a href="#latest" onClick={onNavigateToLatest} className="section-more-link">
+          <Link 
+            to="/aur-padho?category=वायरल" 
+            state={{ category: "वायरल" }} 
+            className="section-more-link"
+          >
             <span>और पढ़ें</span>
             <ChevronRight size={14} />
-          </a>
+          </Link>
         </div>
 
         {/* 4-Column Responsive Grid mapped from viral.js content */}
         <div className="four-col-grid" data-slot="viral-news-grid">
           {viralStories.map((story) => (
             <article key={story.id} className="news-card-v" data-slot="viral-card">
-              <a href="#" className="card-img-wrap">
+              <Link to="/news" className="card-img-wrap">
                 <img 
                   src={story.imageUrl} 
                   alt={story.headline} 
@@ -39,12 +44,12 @@ export default function ViralNews({ onNavigateToLatest }) {
 
                 {/* Duration Badge */}
                 <span className="video-duration">{story.duration}</span>
-              </a>
+              </Link>
 
               <div className="card-v-body">
                 <span className="card-badge-pill">{story.section}</span>
                 <h3 className="card-v-title">
-                  <a href="#">{story.headline}</a>
+                  <Link to="/news">{story.headline}</Link>
                 </h3>
                 <div className="card-meta">
                   <span className="card-author">{story.author}</span>

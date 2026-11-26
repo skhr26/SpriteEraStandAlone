@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { categoryTrioData } from '../data/categoryTrio';
 
-export default function CategoryTrio({ onNavigateToLatest }) {
+export default function CategoryTrio() {
   return (
     <section className="category-trio-section" aria-label="बिज़नेस, खेल और क्राइम">
       <div className="center-container">
@@ -15,14 +16,18 @@ export default function CategoryTrio({ onNavigateToLatest }) {
                   <span className="trio-red-bar">|</span>
                   <span className="trio-title-text">{col.title}</span>
                 </h2>
-                <a href="#latest" onClick={onNavigateToLatest} className="trio-more-pill">
+                <Link 
+                  to={`/aur-padho?category=${encodeURIComponent(col.title)}`}
+                  state={{ category: col.title }}
+                  className="trio-more-pill"
+                >
                   और पढ़ें
-                </a>
+                </Link>
               </div>
 
               {/* Big Lead Card with Headline Overlay */}
               <article className="trio-lead-card">
-                <a href={col.lead.url} className="trio-lead-link">
+                <Link to="/news" className="trio-lead-link">
                   <div className="trio-lead-img-wrap">
                     <img 
                       src={col.lead.imageUrl} 
@@ -31,24 +36,24 @@ export default function CategoryTrio({ onNavigateToLatest }) {
                       onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
                     />
                   </div>
-                </a>
+                </Link>
               </article>
 
               {/* 3 Compact Stories (Thumbnail LEFT, Title RIGHT) */}
               <div className="trio-compact-group">
                 {col.stories.map((story) => (
                   <article key={story.id} className="trio-compact-story">
-                    <div className="trio-thumb">
+                    <Link to="/news" className="trio-thumb">
                       <img 
                         src={story.imageUrl} 
                         alt={story.headline} 
                         loading="lazy"
                         onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
                       />
-                    </div>
+                    </Link>
                     <div className="trio-story-body">
                       <h3 className="trio-story-title">
-                        <a href={story.url}>{story.headline}</a>
+                        <Link to="/news">{story.headline}</Link>
                       </h3>
                     </div>
                   </article>

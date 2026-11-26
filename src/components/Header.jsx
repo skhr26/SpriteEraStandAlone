@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { ChevronDown, Search, Moon, Sun } from 'lucide-react';
 import { IoLogoGooglePlaystore } from 'react-icons/io5';
 import { BsThreeDots } from 'react-icons/bs';
@@ -39,13 +40,44 @@ const socials = [
 ];
 
 export default function Header({ darkMode, setDarkMode, activePage, setActivePage, onNavigateToHome, onNavigateToLatest, onOpenDrawer }) {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const currentCategory = searchParams.get('category') || location.state?.category || '';
+  const isOnAurPadho = location.pathname === "/aur-padho" || location.pathname === "/taazakhabar" || location.pathname === "/aurpadho";
+
   const [dateStr, setDateStr] = useState('');
   const [timeStr, setTimeStr] = useState('');
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const dropdownTimeoutRef = React.useRef(null);
+
+  const handleMouseEnterItem = (val) => {
+    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    setActiveDropdown(val);
+  };
+
+  const handleMouseLeaveItem = () => {
+    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 150);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (e.target && typeof e.target.closest === 'function' && !e.target.closest('.has-dropdown')) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    };
+  }, []);
 
   // Sticky Navbar when scrolling past topbar
   useEffect(() => {
@@ -82,7 +114,12 @@ export default function Header({ darkMode, setDarkMode, activePage, setActivePag
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      alert(`खोज परिणाम: "${searchQuery}"`);
+      const q = searchQuery.trim();
+      navigate(`/aur-padho?category=${encodeURIComponent(q)}`, {
+        state: { category: q }
+      });
+      setSearchOpen(false);
+      setSearchQuery('');
     }
   };
 
@@ -121,22 +158,13 @@ export default function Header({ darkMode, setDarkMode, activePage, setActivePag
 
           {/* Center: logo */}
           <div className="custom-topbar-center">
-            <a 
-              href="#home" 
+            <Link 
+              to="/" 
               className="custom-logo-wrap" 
               aria-label="Navbharat Home"
-              onClick={(e) => {
-                if (onNavigateToHome) {
-                  onNavigateToHome(e);
-                } else {
-                  e.preventDefault();
-                  if (setActivePage) setActivePage('home');
-                  window.location.hash = 'home';
-                }
-              }}
             >
               <img src="/assets/logo.png" alt="नवभारत" className="custom-navbharat-logo" />
-            </a>
+            </Link>
           </div>
 
           {/* Right */}
@@ -170,62 +198,62 @@ export default function Header({ darkMode, setDarkMode, activePage, setActivePag
         <div className="navbar-full-width custom-nav-inner">
           <ul className="custom-nav-menu">
             {navCategories.map((item, idx) => {
-              const isItemActive = 
-                (item.name === "होम" && activePage === "home") ||
-                (item.name === "ताजा खबर" && activePage === "latest") ||
-                (activePage !== "home" && activePage !== "latest" && item.active);
+              const isHome = item.name === "होम";
+              const isTaza = item.name === "ताजा खबर" || item.name === "और पढ़ो";
+
+              const isItemActive = isHome
+                ? location.pathname === "/"
+                : isOnAurPadho && (
+                    (isTaza && (currentCategory === "ताज़ा खबर" || currentCategory === "ताजा खबर" || !currentCategory)) ||
+                    (item.name === currentCategory) ||
+                    (item.subItems && item.subItems.some(sub => sub.name === currentCategory))
+                  );
+
+              const categoryParam = isTaza ? "ताज़ा खबर" : item.name;
+              const targetTo = isHome 
+                ? "/" 
+                : `/aur-padho?category=${encodeURIComponent(categoryParam)}`;
 
               return (
                 <li
                   key={idx}
                   className={`custom-nav-item ${item.hasDropdown ? 'has-dropdown' : ''}`}
-                  onMouseEnter={() => item.hasDropdown && setActiveDropdown(idx)}
-                  onMouseLeave={() => item.hasDropdown && setActiveDropdown(null)}
+                  onMouseEnter={() => handleMouseEnterItem(item.hasDropdown ? idx : null)}
+                  onMouseLeave={handleMouseLeaveItem}
                 >
-                  <a 
-                    href={item.href} 
+                  <Link 
+                    to={targetTo} 
+                    state={!isHome ? { category: categoryParam } : undefined}
                     className={`custom-nav-link ${isItemActive ? 'active' : ''}`}
-                    onClick={(e) => {
-                      if (item.name === "ताजा खबर") {
-                        if (onNavigateToLatest) {
-                          onNavigateToLatest(e);
-                        } else {
-                          e.preventDefault();
-                          if (setActivePage) setActivePage('latest');
-                          window.location.hash = 'latest';
-                        }
-                      } else if (item.name === "होम") {
-                        if (onNavigateToHome) {
-                          onNavigateToHome(e);
-                        } else {
-                          e.preventDefault();
-                          if (setActivePage) setActivePage('home');
-                          window.location.hash = 'home';
-                        }
-                      } else {
-                        // Switch back to home view when any other section is selected
-                        if (setActivePage) setActivePage('home');
-                      }
-                    }}
+                    onClick={() => setActiveDropdown(null)}
                   >
                     <span>{item.name}</span>
                     {item.hasDropdown && <ChevronDown size={14} className="dropdown-chevron" />}
-                  </a>
+                  </Link>
 
                   {item.hasDropdown && activeDropdown === idx && (
-                    <ul className="custom-dropdown-menu">
-                      {item.subItems.map((sub, sIdx) => (
-                        <li key={sIdx} className="dropdown-item">
-                          <a 
-                            href={sub.href}
-                            onClick={() => {
-                              if (setActivePage) setActivePage('home');
-                            }}
-                          >
-                            {sub.name}
-                          </a>
-                        </li>
-                      ))}
+                    <ul 
+                      className="custom-dropdown-menu"
+                      onMouseEnter={() => {
+                        if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+                      }}
+                      onMouseLeave={handleMouseLeaveItem}
+                    >
+                      {item.subItems.map((sub, sIdx) => {
+                        const isSubActive = isOnAurPadho && currentCategory === sub.name;
+                        return (
+                          <li key={sIdx} className="dropdown-item">
+                            <Link 
+                              to={`/aur-padho?category=${encodeURIComponent(sub.name)}`}
+                              state={{ category: sub.name }}
+                              className={isSubActive ? 'active-sub' : ''}
+                              onClick={() => setActiveDropdown(null)}
+                            >
+                              {sub.name}
+                            </Link>
+                          </li>
+                        );
+                      })}
                     </ul>
                   )}
                 </li>
@@ -235,27 +263,63 @@ export default function Header({ darkMode, setDarkMode, activePage, setActivePag
             {/* More (•••) */}
             <li
               className="custom-nav-item has-dropdown more-item"
-              onMouseEnter={() => setMoreDropdownOpen(true)}
-              onMouseLeave={() => setMoreDropdownOpen(false)}
+              onMouseEnter={() => handleMouseEnterItem('more')}
+              onMouseLeave={handleMouseLeaveItem}
             >
-              <button className="custom-nav-link more-btn" aria-label="More Categories">
+              <button 
+                type="button"
+                className={`custom-nav-link more-btn ${activeDropdown === 'more' ? 'active' : ''}`}
+                aria-label="More Categories"
+                title="अन्य श्रेणियां"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveDropdown(prev => prev === 'more' ? null : 'more');
+                }}
+              >
                 <BsThreeDots size={20} />
               </button>
 
-              {moreDropdownOpen && (
-                <ul className="custom-dropdown-menu more-dropdown">
-                  {moreMenuItems.map((m, mIdx) => (
-                    <li key={mIdx} className="dropdown-item">
-                      <a href={m.href}>{m.name}</a>
-                    </li>
-                  ))}
+              {activeDropdown === 'more' && (
+                <ul 
+                  className="custom-dropdown-menu more-dropdown"
+                  onMouseEnter={() => {
+                    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+                  }}
+                  onMouseLeave={handleMouseLeaveItem}
+                >
+                  {moreMenuItems.map((m, mIdx) => {
+                    const isWs = m.name === "वेब स्टोरीज़" || m.name === "वेब स्टोरीज";
+                    const isMoreActive = isWs 
+                      ? (location.pathname === "/aurpadho-webstories" || location.pathname === "/webstories")
+                      : (isOnAurPadho && currentCategory === m.name);
+                    const targetLink = isWs 
+                      ? "/aurpadho-webstories" 
+                      : `/aur-padho?category=${encodeURIComponent(m.name)}`;
+
+                    return (
+                      <li key={mIdx} className="dropdown-item">
+                        <Link 
+                          to={targetLink}
+                          state={{ category: m.name }}
+                          className={isMoreActive ? 'active-sub' : ''}
+                          onClick={() => setActiveDropdown(null)}
+                        >
+                          {m.name}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               )}
             </li>
 
             {/* Theme toggle */}
-            <li className="custom-nav-item theme-nav-item">
+            <li 
+              className="custom-nav-item theme-nav-item"
+              onMouseEnter={() => handleMouseEnterItem(null)}
+            >
               <button
+                type="button"
                 className="custom-nav-link theme-icon-btn"
                 onClick={() => setDarkMode(!darkMode)}
                 title={darkMode ? 'लाइट मोड में बदलें' : 'डार्क मोड में बदलें'}
@@ -267,7 +331,10 @@ export default function Header({ darkMode, setDarkMode, activePage, setActivePag
           </ul>
 
           {/* Search */}
-          <div className="custom-nav-search-wrap">
+          <div 
+            className="custom-nav-search-wrap"
+            onMouseEnter={() => handleMouseEnterItem(null)}
+          >
             <button
               className="nav-search-trigger"
               onClick={() => setSearchOpen(!searchOpen)}

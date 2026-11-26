@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   heroLeadStory, 
   col1CompactStories, 
@@ -20,17 +21,17 @@ export default function LeadGrid() {
             
             {/* Lead Hero Story */}
             <article className="lead-hero-clean">
-              <a href="#" className="hero-clean-img-wrap">
+              <Link to="/news" className="hero-clean-img-wrap">
                 <img 
                   src={heroLeadStory.imageUrl} 
                   alt={heroLeadStory.headline} 
                   loading="eager"
                   onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
                 />
-              </a>
+              </Link>
               <div className="hero-clean-body">
                 <h2 className="hero-clean-title">
-                  <a href="#">{heroLeadStory.headline}</a>
+                  <Link to="/news">{heroLeadStory.headline}</Link>
                 </h2>
                 <div className="story-timestamp">{heroLeadStory.time}</div>
               </div>
@@ -40,17 +41,17 @@ export default function LeadGrid() {
             <div className="col1-stories-group">
               {col1CompactStories.map((story) => (
                 <article key={story.id} className="clean-compact-story thumb-left">
-                  <div className="clean-thumb">
+                  <Link to="/news" className="clean-thumb">
                     <img 
                       src={story.imageUrl} 
                       alt={story.headline} 
                       loading="lazy"
                       onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
                     />
-                  </div>
+                  </Link>
                   <div className="clean-content">
                     <h3 className="clean-story-title">
-                      <a href="#">{story.headline}</a>
+                      <Link to="/news">{story.headline}</Link>
                     </h3>
                     <div className="story-timestamp">{story.time}</div>
                   </div>
@@ -69,18 +70,18 @@ export default function LeadGrid() {
                 <article key={story.id} className="clean-compact-story thumb-right">
                   <div className="clean-content">
                     <h3 className="clean-story-title">
-                      <a href="#">{story.headline}</a>
+                      <Link to="/news">{story.headline}</Link>
                     </h3>
                     <div className="story-timestamp">{story.time}</div>
                   </div>
-                  <div className="clean-thumb">
+                  <Link to="/news" className="clean-thumb">
                     <img 
                       src={story.imageUrl} 
                       alt={story.headline} 
                       loading="lazy"
                       onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
                     />
-                  </div>
+                  </Link>
                 </article>
               ))}
             </div>
@@ -102,18 +103,18 @@ export default function LeadGrid() {
                 <article key={story.id} className="clean-compact-story thumb-right">
                   <div className="clean-content">
                     <h3 className="clean-story-title">
-                      <a href="#">{story.headline}</a>
+                      <Link to="/news">{story.headline}</Link>
                     </h3>
                     <div className="story-timestamp">{story.time}</div>
                   </div>
-                  <div className="clean-thumb">
+                  <Link to="/news" className="clean-thumb">
                     <img 
                       src={story.imageUrl} 
                       alt={story.headline} 
                       loading="lazy"
                       onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
                     />
-                  </div>
+                  </Link>
                 </article>
               ))}
             </div>
