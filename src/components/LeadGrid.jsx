@@ -21,7 +21,7 @@ export default function LeadGrid() {
             
             {/* Lead Hero Story */}
             <article className="lead-hero-clean">
-              <Link to="/news" className="hero-clean-img-wrap">
+              <Link to={heroLeadStory.url || "/news"} className="hero-clean-img-wrap">
                 <img 
                   src={heroLeadStory.imageUrl} 
                   alt={heroLeadStory.headline} 
@@ -31,7 +31,7 @@ export default function LeadGrid() {
               </Link>
               <div className="hero-clean-body">
                 <h2 className="hero-clean-title">
-                  <Link to="/news">{heroLeadStory.headline}</Link>
+                  <Link to={heroLeadStory.url || "/news"}>{heroLeadStory.headline}</Link>
                 </h2>
                 <div className="story-timestamp">{heroLeadStory.time}</div>
               </div>
@@ -41,7 +41,7 @@ export default function LeadGrid() {
             <div className="col1-stories-group">
               {col1CompactStories.map((story) => (
                 <article key={story.id} className="clean-compact-story thumb-left">
-                  <Link to="/news" className="clean-thumb">
+                  <Link to={story.url || "/news"} className="clean-thumb">
                     <img 
                       src={story.imageUrl} 
                       alt={story.headline} 
@@ -51,7 +51,7 @@ export default function LeadGrid() {
                   </Link>
                   <div className="clean-content">
                     <h3 className="clean-story-title">
-                      <Link to="/news">{story.headline}</Link>
+                      <Link to={story.url || "/news"}>{story.headline}</Link>
                     </h3>
                     <div className="story-timestamp">{story.time}</div>
                   </div>
@@ -70,11 +70,11 @@ export default function LeadGrid() {
                 <article key={story.id} className="clean-compact-story thumb-right">
                   <div className="clean-content">
                     <h3 className="clean-story-title">
-                      <Link to="/news">{story.headline}</Link>
+                      <Link to={story.url || "/news"}>{story.headline}</Link>
                     </h3>
                     <div className="story-timestamp">{story.time}</div>
                   </div>
-                  <Link to="/news" className="clean-thumb">
+                  <Link to={story.url || "/news"} className="clean-thumb">
                     <img 
                       src={story.imageUrl} 
                       alt={story.headline} 
@@ -103,11 +103,11 @@ export default function LeadGrid() {
                 <article key={story.id} className="clean-compact-story thumb-right">
                   <div className="clean-content">
                     <h3 className="clean-story-title">
-                      <Link to="/news">{story.headline}</Link>
+                      <Link to={story.url || "/news"}>{story.headline}</Link>
                     </h3>
                     <div className="story-timestamp">{story.time}</div>
                   </div>
-                  <Link to="/news" className="clean-thumb">
+                  <Link to={story.url || "/news"} className="clean-thumb">
                     <img 
                       src={story.imageUrl} 
                       alt={story.headline} 

@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
 import { navCategories } from '../data/navigation';
+import { getRouteForCategory } from '../data/routeMap';
 
 export default function MobileDrawer({ isOpen, onClose }) {
   return (
@@ -21,9 +23,9 @@ export default function MobileDrawer({ isOpen, onClose }) {
           <ul className="drawer-menu-list">
             {navCategories.map((cat, idx) => (
               <li key={idx} className="drawer-menu-item">
-                <a href={cat.href} onClick={onClose}>
+                <Link to={getRouteForCategory(cat.name)} onClick={onClose}>
                   {cat.name}
-                </a>
+                </Link>
               </li>
             ))}
             <li className="drawer-menu-item">
@@ -37,14 +39,14 @@ export default function MobileDrawer({ isOpen, onClose }) {
               </a>
             </li>
             <li className="drawer-menu-item">
-              <a href="#viral" onClick={onClose}>
-                📹 वायरल वीडियो (Viral)
-              </a>
+              <Link to="/viral" onClick={onClose}>
+                📹 वायरल (Viral)
+              </Link>
             </li>
             <li className="drawer-menu-item">
-              <a href="#webstories" onClick={onClose}>
+              <Link to="/ampstories/web-stories" onClick={onClose}>
                 📱 वेब स्टोरीज़ (Web Stories)
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

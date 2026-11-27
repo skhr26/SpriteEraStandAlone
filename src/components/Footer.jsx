@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { getRouteForCategory } from '../data/routeMap';
 import { 
   XCircleIcon, 
   YouTubeCircleIcon, 
@@ -77,10 +78,7 @@ export default function Footer() {
               <h4 className="footer-col-heading">{sec.title}</h4>
               <ul className="footer-col-links">
                 {sec.links.map((link, lIdx) => {
-                  const isWs = link.name === "वेब स्टोरीज़" || link.name === "वेब स्टोरीज";
-                  const targetLink = isWs 
-                    ? "/aurpadho-webstories" 
-                    : `/aur-padho?category=${encodeURIComponent(link.name)}`;
+                  const targetLink = getRouteForCategory(link.name);
 
                   return (
                     <li key={lIdx}>
@@ -93,10 +91,7 @@ export default function Footer() {
                           {link.name}
                         </a>
                       ) : (
-                        <Link 
-                          to={targetLink}
-                          state={{ category: link.name }}
-                        >
+                        <Link to={targetLink}>
                           {link.name}
                         </Link>
                       )}

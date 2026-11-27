@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Play } from 'lucide-react';
-// Importing content from separate viral.js file as requested
 import { viralStories } from '../data/viral';
 
 export default function ViralNews() {
   return (
-    <section className="news-grid-section" id="viral" aria-label="Viral News Grid">
+    <section className="news-grid-section" id="viral-news-section" aria-label="Viral News Grid">
       <div className="center-container">
         <div className="section-header">
           <div className="section-title-wrap">
@@ -14,9 +13,9 @@ export default function ViralNews() {
             <h2 className="section-title">वायरल</h2>
           </div>
           <Link 
-            to="/aur-padho?category=वायरल" 
-            state={{ category: "वायरल" }} 
+            to="/viral" 
             className="section-more-link"
+            title="और पढ़ें"
           >
             <span>और पढ़ें</span>
             <ChevronRight size={14} />
@@ -27,7 +26,7 @@ export default function ViralNews() {
         <div className="four-col-grid" data-slot="viral-news-grid">
           {viralStories.map((story) => (
             <article key={story.id} className="news-card-v" data-slot="viral-card">
-              <Link to="/news" className="card-img-wrap">
+              <Link to={story.url || "/viral"} className="card-img-wrap">
                 <img 
                   src={story.imageUrl} 
                   alt={story.headline} 
@@ -49,7 +48,7 @@ export default function ViralNews() {
               <div className="card-v-body">
                 <span className="card-badge-pill">{story.section}</span>
                 <h3 className="card-v-title">
-                  <Link to="/news">{story.headline}</Link>
+                  <Link to={story.url || "/viral"}>{story.headline}</Link>
                 </h3>
                 <div className="card-meta">
                   <span className="card-author">{story.author}</span>

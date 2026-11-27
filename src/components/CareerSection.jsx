@@ -4,19 +4,8 @@ import { careerData } from '../data/career';
 
 export default function CareerSection() {
   return (
-    <section className="career-section" aria-label="करियर समाचार">
+    <section className="career-section-container" aria-label="करियर">
       <div className="center-container">
-        
-        {/* Top Leaderboard Ad Banner (YouTube Amplify Ad) */}
-        <div className="career-ad-wrapper">
-          <div className="career-ad-box">
-            <img 
-              src="/assets/youtube-ad-banner.jpg" 
-              alt="Amplify your best content on YouTube" 
-              className="career-ad-img"
-            />
-          </div>
-        </div>
 
         {/* Header */}
         <div className="section-header-row">
@@ -25,8 +14,7 @@ export default function CareerSection() {
             <span>करियर</span>
           </h2>
           <Link 
-            to="/aur-padho?category=करियर" 
-            state={{ category: "करियर" }} 
+            to="/career" 
             className="black-more-pill"
           >
             और पढ़ें
@@ -37,7 +25,7 @@ export default function CareerSection() {
         <div className="career-grid-6col">
           {careerData.map((item) => (
             <article key={item.id} className="career-card">
-              <Link to="/news" className="career-img-link">
+              <Link to={item.url || "/career"} className="career-img-link">
                 <div className="career-img-wrap">
                   <img 
                     src={item.imageUrl} 
@@ -49,7 +37,7 @@ export default function CareerSection() {
               </Link>
               <div className="career-body">
                 <h3 className="career-title">
-                  <Link to="/news">{item.title}</Link>
+                  <Link to={item.url || "/career"}>{item.title}</Link>
                 </h3>
                 <div className="career-time">{item.time}</div>
               </div>

@@ -1,11 +1,13 @@
 /**
  * Latest News Section Content (ताजा खबर)
- * Referenced in LatestNews component and repeated using Array.map()
+ * Referenced in LatestNews component with authentic Quintype/Navbharat routes
  */
 
 export const latestStories = [
   {
     id: "latest-1",
+    slug: "ind-vs-nz-4th-odi-live-score-michael-bracewell-out-score-260",
+    url: "/sports/cricket/ind-vs-nz-4th-odi-live-score-michael-bracewell-out-score-260",
     headline: "IND vs NZ 4th ODI Live Score: न्यूजीलैंड को लगा छठा झटका, माइकल ब्रेसवेल 15 रन बनाकर आउट, स्कोर 260 के पार",
     section: "खेल",
     author: "राहुल उपाध्याय",
@@ -14,6 +16,8 @@ export const latestStories = [
   },
   {
     id: "latest-2",
+    slug: "iit-kanpur-insulin-secretion-research-diabetes-breakthrough",
+    url: "/tech/science/iit-kanpur-insulin-secretion-research-diabetes-breakthrough",
     headline: "IIT कानपुर की खोज: प्रतिरक्षा कोशिकाएं मिनटों में रोक सकती हैं इंसुलिन स्राव, मधुमेह अनुसंधान को मिली नई दिशा",
     section: "साइंस & टेक",
     author: "नवभारत ब्यूरो",
@@ -22,6 +26,8 @@ export const latestStories = [
   },
   {
     id: "latest-3",
+    slug: "raipur-bhanpuri-gajraj-polymer-factory-major-fire-rescue-operation",
+    url: "/state/chhattisgarh/raipur/raipur-bhanpuri-gajraj-polymer-factory-major-fire-rescue-operation",
     headline: "रायपुर के भनपुरी में गजराज पॉलीमर फैक्ट्री में लगी भीषण आग, रातभर चला राहत व बचाव कार्य",
     section: "छत्तीसगढ़",
     author: "संजीव वर्मा",
@@ -30,6 +36,8 @@ export const latestStories = [
   },
   {
     id: "latest-4",
+    slug: "chhatrapati-sambhajinagar-traders-cctv-compulsion-protest-police-order",
+    url: "/state/maharashtra/sambhajinagar/chhatrapati-sambhajinagar-traders-cctv-compulsion-protest-police-order",
     headline: "छत्रपति संभाजीनगर में CCTV अनिवार्यता पर व्यापारियों का तीखा विरोध, पुलिस आदेश स्थगित करने की मांग",
     section: "महाराष्ट्र",
     author: "अनिल कुलकर्णी",

@@ -14,6 +14,7 @@ import {
 import { FaXTwitter } from 'react-icons/fa6';
 import { SiGooglenews } from 'react-icons/si';
 import { navCategories, moreMenuItems } from '../data/navigation';
+import { getRouteForCategory, getCategoryFromPath } from '../data/routeMap';
 
 const socials = [
   { title: 'X (Twitter)', href: 'https://twitter.com', bg: '#000000', Icon: FaXTwitter, size: 15 },
@@ -43,8 +44,8 @@ export default function Header({ darkMode, setDarkMode, activePage, setActivePag
   const location = useLocation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const currentCategory = searchParams.get('category') || location.state?.category || '';
-  const isOnAurPadho = location.pathname === "/aur-padho" || location.pathname === "/taazakhabar" || location.pathname === "/aurpadho";
+  const currentCategory = getCategoryFromPath(location.pathname, searchParams.get('category'));
+  const isHome = location.pathname === "/";
 
   const [dateStr, setDateStr] = useState('');
   const [timeStr, setTimeStr] = useState('');
@@ -198,21 +199,17 @@ export default function Header({ darkMode, setDarkMode, activePage, setActivePag
         <div className="navbar-full-width custom-nav-inner">
           <ul className="custom-nav-menu">
             {navCategories.map((item, idx) => {
-              const isHome = item.name === "होम";
-              const isTaza = item.name === "ताजा खबर" || item.name === "और पढ़ो";
+              const isItemHome = item.name === "होम";
+              const targetTo = isItemHome ? "/" : getRouteForCategory(item.name);
 
-              const isItemActive = isHome
-                ? location.pathname === "/"
-                : isOnAurPadho && (
-                    (isTaza && (currentCategory === "ताज़ा खबर" || currentCategory === "ताजा खबर" || !currentCategory)) ||
-                    (item.name === currentCategory) ||
-                    (item.subItems && item.subItems.some(sub => sub.name === currentCategory))
+              const isItemActive = isItemHome
+                ? isHome
+                : !isHome && (
+                    item.name === currentCategory ||
+                    (item.name === "ताजा खबर" && (currentCategory === "ताजा खबर" || currentCategory === "ताज़ा खबर")) ||
+                    (item.name === "एस्ट्रो" && (currentCategory === "एस्ट्रो" || location.pathname.startsWith('/astro') || location.pathname.includes('rashifal') || location.pathname.includes('panchang'))) ||
+                    (item.subItems && item.subItems.some(sub => sub.name === currentCategory || location.pathname === getRouteForCategory(sub.name)))
                   );
-
-              const categoryParam = isTaza ? "ताज़ा खबर" : item.name;
-              const targetTo = isHome 
-                ? "/" 
-                : `/aur-padho?category=${encodeURIComponent(categoryParam)}`;
 
               return (
                 <li
@@ -223,7 +220,6 @@ export default function Header({ darkMode, setDarkMode, activePage, setActivePag
                 >
                   <Link 
                     to={targetTo} 
-                    state={!isHome ? { category: categoryParam } : undefined}
                     className={`custom-nav-link ${isItemActive ? 'active' : ''}`}
                     onClick={() => setActiveDropdown(null)}
                   >
@@ -240,12 +236,12 @@ export default function Header({ darkMode, setDarkMode, activePage, setActivePag
                       onMouseLeave={handleMouseLeaveItem}
                     >
                       {item.subItems.map((sub, sIdx) => {
-                        const isSubActive = isOnAurPadho && currentCategory === sub.name;
+                        const isSubActive = !isHome && (currentCategory === sub.name || location.pathname === getRouteForCategory(sub.name));
+                        const subTarget = getRouteForCategory(sub.name);
                         return (
                           <li key={sIdx} className="dropdown-item">
                             <Link 
-                              to={`/aur-padho?category=${encodeURIComponent(sub.name)}`}
-                              state={{ category: sub.name }}
+                              to={subTarget}
                               className={isSubActive ? 'active-sub' : ''}
                               onClick={() => setActiveDropdown(null)}
                             >
@@ -288,19 +284,13 @@ export default function Header({ darkMode, setDarkMode, activePage, setActivePag
                   onMouseLeave={handleMouseLeaveItem}
                 >
                   {moreMenuItems.map((m, mIdx) => {
-                    const isWs = m.name === "वेब स्टोरीज़" || m.name === "वेब स्टोरीज";
-                    const isMoreActive = isWs 
-                      ? (location.pathname === "/aurpadho-webstories" || location.pathname === "/webstories")
-                      : (isOnAurPadho && currentCategory === m.name);
-                    const targetLink = isWs 
-                      ? "/aurpadho-webstories" 
-                      : `/aur-padho?category=${encodeURIComponent(m.name)}`;
+                    const isMoreActive = !isHome && currentCategory === m.name;
+                    const targetLink = getRouteForCategory(m.name);
 
                     return (
                       <li key={mIdx} className="dropdown-item">
                         <Link 
                           to={targetLink}
-                          state={{ category: m.name }}
                           className={isMoreActive ? 'active-sub' : ''}
                           onClick={() => setActiveDropdown(null)}
                         >

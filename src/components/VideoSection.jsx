@@ -4,18 +4,17 @@ import { videoData } from '../data/videos';
 
 export default function VideoSection() {
   return (
-    <section className="video-section-grey-wrap" aria-label="वीडियो समाचार">
+    <section className="video-section" aria-label="वीडियो">
       <div className="center-container">
         
-        {/* Section Header */}
+        {/* Section Header: Left Title with Red Bar, Right Pill 'और पढ़ें' */}
         <div className="section-header-row">
           <h2 className="section-title-bold">
             <span className="accent-bar">|</span>
             <span>वीडियो</span>
           </h2>
           <Link 
-            to="/aur-padho?category=वीडियो" 
-            state={{ category: "वीडियो" }} 
+            to="/video" 
             className="black-more-pill"
           >
             और पढ़ें
@@ -26,7 +25,7 @@ export default function VideoSection() {
         <div className="video-grid-4col">
           {videoData.map((item) => (
             <article key={item.id} className="video-item-card">
-              <Link to="/news" className="video-thumb-link">
+              <Link to={item.url || "/video"} className="video-thumb-link">
                 <div className="video-thumb-wrap">
                   <img 
                     src={item.imageUrl} 
@@ -38,7 +37,7 @@ export default function VideoSection() {
               </Link>
               <div className="video-card-body">
                 <h3 className="video-card-title">
-                  <Link to="/news">{item.title}</Link>
+                  <Link to={item.url || "/video"}>{item.title}</Link>
                 </h3>
                 <div className="video-card-time">{item.time}</div>
               </div>

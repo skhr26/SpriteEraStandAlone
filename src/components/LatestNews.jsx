@@ -17,8 +17,7 @@ export default function LatestNews() {
           </div>
 
           <Link
-            to="/aur-padho?category=ताज़ा खबर"
-            state={{ category: "ताज़ा खबर" }}
+            to="/latest-news"
             className="section-more-link"
             title="और पढ़ें"
           >
@@ -31,7 +30,7 @@ export default function LatestNews() {
           {latestStories.map((story) => (
             <article key={story.id} className="news-card-v" data-slot="news-card">
               <Link
-                to="/news"
+                to={story.url || "/latest-news"}
                 className="card-img-wrap"
                 title={story.headline}
                 aria-label={story.headline}
@@ -50,7 +49,7 @@ export default function LatestNews() {
                 <span className="card-badge-pill">{story.section}</span>
 
                 <h3 className="card-v-title">
-                  <Link to="/news">{story.headline}</Link>
+                  <Link to={story.url || "/latest-news"}>{story.headline}</Link>
                 </h3>
 
                 <div className="card-meta">

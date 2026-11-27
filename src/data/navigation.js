@@ -50,13 +50,13 @@ export const navCategories = [
   { name: "बिज़नेस", href: "#business" },
   { 
     name: "एस्ट्रो", 
-    href: "#astro", 
+    href: "/astro", 
     hasDropdown: true,
     subItems: [
-      { name: "दैनिक राशिफल", href: "#daily-horoscope" },
-      { name: "साप्ताहिक राशिफल", href: "#weekly-horoscope" },
-      { name: "पंचांग", href: "#panchang" },
-      { name: "अंकज्योतिष", href: "#numerology" }
+      { name: "दैनिक राशिफल", href: "/astro/aaj-ka-rashifal" },
+      { name: "साप्ताहिक राशिफल", href: "/astro/saptahik-rashifal" },
+      { name: "पंचांग", href: "/astro/panchang" },
+      { name: "अंकज्योतिष", href: "/astro/ank-jyotish" }
     ]
   },
   { 

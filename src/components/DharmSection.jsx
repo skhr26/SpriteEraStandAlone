@@ -7,17 +7,17 @@ export default function DharmSection() {
   const bottomRow = dharmData.slice(3, 5);
 
   return (
-    <section className="dharm-section" aria-label="धर्म समाचार">
+    <section className="dharm-section" aria-label="धर्म">
       <div className="center-container">
-        {/* Header */}
+        
+        {/* Section Header: Left Title with Red Bar, Right Pill 'और पढ़ें' */}
         <div className="section-header-row">
           <h2 className="section-title-bold">
             <span className="accent-bar">|</span>
             <span>धर्म</span>
           </h2>
           <Link 
-            to="/aur-padho?category=धर्म" 
-            state={{ category: "धर्म" }} 
+            to="/dharm" 
             className="black-more-pill"
           >
             और पढ़ें
@@ -28,7 +28,7 @@ export default function DharmSection() {
         <div className="dharm-grid">
           {topRow.map((item) => (
             <article key={item.id} className="dharm-card">
-              <Link to="/news" className="dharm-img-link">
+              <Link to={item.url || "/dharm"} className="dharm-img-link">
                 <div className="dharm-img-wrap">
                   <img 
                     src={item.imageUrl} 
@@ -40,7 +40,7 @@ export default function DharmSection() {
               </Link>
               <div className="dharm-body">
                 <h3 className="dharm-title">
-                  <Link to="/news">{item.title}</Link>
+                  <Link to={item.url || "/dharm"}>{item.title}</Link>
                 </h3>
                 <div className="dharm-time">{item.time}</div>
               </div>
@@ -52,7 +52,7 @@ export default function DharmSection() {
         <div className="dharm-grid dharm-grid-bottom">
           {bottomRow.map((item) => (
             <article key={item.id} className="dharm-card">
-              <Link to="/news" className="dharm-img-link">
+              <Link to={item.url || "/dharm"} className="dharm-img-link">
                 <div className="dharm-img-wrap">
                   <img 
                     src={item.imageUrl} 
@@ -64,13 +64,14 @@ export default function DharmSection() {
               </Link>
               <div className="dharm-body">
                 <h3 className="dharm-title">
-                  <Link to="/news">{item.title}</Link>
+                  <Link to={item.url || "/dharm"}>{item.title}</Link>
                 </h3>
                 <div className="dharm-time">{item.time}</div>
               </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );

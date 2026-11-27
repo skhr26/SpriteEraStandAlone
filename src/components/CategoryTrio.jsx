@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { categoryTrioData } from '../data/categoryTrio';
+import { getRouteForCategory } from '../data/routeMap';
 
 export default function CategoryTrio() {
   return (
@@ -17,8 +18,7 @@ export default function CategoryTrio() {
                   <span className="trio-title-text">{col.title}</span>
                 </h2>
                 <Link 
-                  to={`/aur-padho?category=${encodeURIComponent(col.title)}`}
-                  state={{ category: col.title }}
+                  to={getRouteForCategory(col.title)}
                   className="trio-more-pill"
                 >
                   और पढ़ें
@@ -27,7 +27,7 @@ export default function CategoryTrio() {
 
               {/* Big Lead Card with Headline Overlay */}
               <article className="trio-lead-card">
-                <Link to="/news" className="trio-lead-link">
+                <Link to={col.lead.url || "/news"} className="trio-lead-link">
                   <div className="trio-lead-img-wrap">
                     <img 
                       src={col.lead.imageUrl} 
@@ -43,7 +43,7 @@ export default function CategoryTrio() {
               <div className="trio-compact-group">
                 {col.stories.map((story) => (
                   <article key={story.id} className="trio-compact-story">
-                    <Link to="/news" className="trio-thumb">
+                    <Link to={story.url || "/news"} className="trio-thumb">
                       <img 
                         src={story.imageUrl} 
                         alt={story.headline} 
@@ -53,7 +53,7 @@ export default function CategoryTrio() {
                     </Link>
                     <div className="trio-story-body">
                       <h3 className="trio-story-title">
-                        <Link to="/news">{story.headline}</Link>
+                        <Link to={story.url || "/news"}>{story.headline}</Link>
                       </h3>
                     </div>
                   </article>

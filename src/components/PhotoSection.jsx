@@ -4,20 +4,18 @@ import { photoData } from '../data/photos';
 
 export default function PhotoSection() {
   return (
-    <section className="photo-section" aria-label="फोटो गैलरी">
-      <div className="photo-section-dark-strip">
-        <div className="center-container">
+    <section className="photo-section" aria-label="फोटो">
+      <div className="center-container">
+        <div className="photo-inner-wrapper">
           
-          {/* Header with Title + Horizontal Rule + Pill */}
-          <div className="section-header-divider-row">
+          {/* Section Header */}
+          <div className="section-header-row">
             <h2 className="section-title-bold">
               <span className="accent-bar">|</span>
               <span>फोटो</span>
             </h2>
-            <div className="header-h-line"></div>
             <Link 
-              to="/aur-padho?category=फोटो" 
-              state={{ category: "फोटो" }} 
+              to="/photo" 
               className="black-more-pill"
             >
               और पढ़ें
@@ -28,7 +26,7 @@ export default function PhotoSection() {
           <div className="photo-grid-4col">
             {photoData.map((item) => (
               <article key={item.id} className="photo-card">
-                <Link to="/news" className="photo-img-link">
+                <Link to={item.url || "/photo"} className="photo-img-link" title={item.title}>
                   <div className="photo-img-wrap">
                     <img 
                       src={item.imageUrl} 

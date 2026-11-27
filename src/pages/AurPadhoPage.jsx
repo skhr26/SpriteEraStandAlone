@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams, useLocation, Navigate } from 'react-router-dom';
+import { getCategoryFromPath } from '../data/routeMap';
 import { 
   aurPadhoLeadFeatured, 
   aurPadhoLeadCol1List, 
   aurPadhoLeadCol2List, 
   aurPadhoLeadCol3List, 
-  aurPadhoGridArticles 
+  aurPadhoGridArticles,
+  astroLeadFeatured,
+  astroLeadCol1List,
+  astroLeadCol2List,
+  astroLeadCol3List,
+  astroGridArticles
 } from '../data/aurPadho';
 
 export default function AurPadhoPage() {
@@ -13,16 +19,29 @@ export default function AurPadhoPage() {
   const location = useLocation();
   const [visibleCount, setVisibleCount] = useState(9);
 
-  // Dynamic category heading from query parameter (?category=...) or location state
-  const categoryTitle = 
-    searchParams.get('category') || 
-    searchParams.get('title') || 
-    location.state?.category || 
-    'ताज़ा खबर';
+  // Dynamic category heading resolved from URL path or query parameter
+  const rawParam = searchParams.get('category') || searchParams.get('title') || location.state?.category;
+  const categoryTitle = getCategoryFromPath(location.pathname, rawParam);
+
+  // Detect if current route belongs to Astro / Horoscope
+  const isAstro = categoryTitle === 'एस्ट्रो' || 
+                  categoryTitle === 'दैनिक राशिफल' || 
+                  categoryTitle === 'साप्ताहिक राशिफल' || 
+                  categoryTitle === 'पंचांग' || 
+                  categoryTitle === 'अंकज्योतिष' || 
+                  location.pathname.startsWith('/astro') ||
+                  location.pathname.includes('rashifal') ||
+                  location.pathname.includes('panchang');
+
+  const leadFeatured = isAstro ? astroLeadFeatured : aurPadhoLeadFeatured;
+  const leadCol1List = isAstro ? astroLeadCol1List : aurPadhoLeadCol1List;
+  const leadCol2List = isAstro ? astroLeadCol2List : aurPadhoLeadCol2List;
+  const leadCol3List = isAstro ? astroLeadCol3List : aurPadhoLeadCol3List;
+  const gridArticles = isAstro ? astroGridArticles : aurPadhoGridArticles;
 
   // If visiting Web Stories, route directly to the dedicated Web Stories page
-  if (categoryTitle === 'वेब स्टोरीज़' || categoryTitle === 'वेब स्टोरीज' || categoryTitle === 'webstories') {
-    return <Navigate to="/aurpadho-webstories" replace />;
+  if (categoryTitle === 'वेब स्टोरीज़' || categoryTitle === 'वेब स्टोरीज' || location.pathname.includes('web-stories')) {
+    return <Navigate to="/ampstories/web-stories" replace />;
   }
 
   useEffect(() => {
@@ -31,10 +50,10 @@ export default function AurPadhoPage() {
   }, [categoryTitle]);
 
   const handleLoadMore = () => {
-    setVisibleCount(prev => Math.min(prev + 6, aurPadhoGridArticles.length));
+    setVisibleCount(prev => Math.min(prev + 6, gridArticles.length));
   };
 
-  const displayedArticles = aurPadhoGridArticles.slice(0, visibleCount);
+  const displayedArticles = gridArticles.slice(0, visibleCount);
 
   return (
     <div className="taza-khabar-page" data-testid="aur-padho-page">
@@ -74,7 +93,7 @@ export default function AurPadhoPage() {
                 data-test-id="arr--hero-image" 
                 aria-label="fallback-hero-image" 
                 className="arr--hero-image with-rounded-corners hero-image-m_hero-image__3lraV taza-hero-image" 
-                to={aurPadhoLeadFeatured.url}
+                to={leadFeatured.url}
               >
                 <div className="hero-image-m_image-wrapper__2EIzt taza-image-wrapper">
                   <figure 
@@ -82,8 +101,8 @@ export default function AurPadhoPage() {
                     style={{ paddingTop: '56.25%' }}
                   >
                     <img 
-                      src={aurPadhoLeadFeatured.imageUrl} 
-                      alt={aurPadhoLeadFeatured.title} 
+                      src={leadFeatured.imageUrl} 
+                      alt={leadFeatured.title} 
                       className="qt-image arr-image-placeholder taza-feat-img" 
                       width="100%" 
                       height="100%"
@@ -99,16 +118,16 @@ export default function AurPadhoPage() {
               >
                 <div className="arr--default-story-content" data-test-id="default-story-content">
                   <div data-test-id="headline" className="arrow-component arr--headline">
-                    <Link aria-label="headline" to={aurPadhoLeadFeatured.url}>
+                    <Link aria-label="headline" to={leadFeatured.url}>
                       <h2 className="taza-feat-title">
-                        {aurPadhoLeadFeatured.title}
+                        {leadFeatured.title}
                       </h2>
                     </Link>
                   </div>
                   <div className="arr--author-time taza-author-time">
                     <div data-test-id="publish-time" className="time arr--publish-time">
                       <div>
-                        <time className="arr__timeago">{aurPadhoLeadFeatured.time}</time>
+                        <time className="arr__timeago">{leadFeatured.time}</time>
                       </div>
                     </div>
                   </div>
@@ -118,7 +137,7 @@ export default function AurPadhoPage() {
 
             {/* Sub-stories below featured card (Thumbnail Left, Text Right) */}
             <div className="taza-col1-sublist">
-              {aurPadhoLeadCol1List.map((item) => (
+              {leadCol1List.map((item) => (
                 <article key={item.id} className="taza-compact-item left-thumb">
                   <Link to={item.url} className="taza-compact-thumb-wrap">
                     <img 
@@ -142,7 +161,7 @@ export default function AurPadhoPage() {
           {/* ── Column 2: 6 Stories Feed (Text Left, Thumbnail Right) ── */}
           <div className="taza-col-2">
             <div className="taza-col2-feed">
-              {aurPadhoLeadCol2List.map((item) => (
+              {leadCol2List.map((item) => (
                 <article key={item.id} className="taza-compact-item right-thumb">
                   <div className="taza-compact-body">
                     <h3 className="taza-compact-title">
@@ -170,7 +189,7 @@ export default function AurPadhoPage() {
 
             {/* 2 Compact Stories (Text Left, Thumbnail Right) */}
             <div className="taza-col3-feed">
-              {aurPadhoLeadCol3List.map((item) => (
+              {leadCol3List.map((item) => (
                 <article key={item.id} className="taza-compact-item right-thumb">
                   <div className="taza-compact-body">
                     <h3 className="taza-compact-title">
@@ -258,7 +277,7 @@ export default function AurPadhoPage() {
         </div>
 
         {/* ── 5. "और पढ़ें" (Load More) Button ── */}
-        {visibleCount < aurPadhoGridArticles.length && (
+        {visibleCount < gridArticles.length && (
           <div className="taza-load-more-wrap">
             <button 
               type="button" 

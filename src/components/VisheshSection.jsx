@@ -7,16 +7,14 @@ export default function VisheshSection() {
     <section className="vishesh-section" aria-label="नवभारत विशेष">
       <div className="center-container">
         
-        {/* Header with Title + Horizontal Rule + Pill */}
-        <div className="section-header-divider-row">
+        {/* Section Header: Left Title with Red Bar, Right Pill 'और पढ़ें' */}
+        <div className="section-header-row">
           <h2 className="section-title-bold">
             <span className="accent-bar">|</span>
             <span>नवभारत विशेष</span>
           </h2>
-          <div className="header-h-line"></div>
           <Link 
-            to="/aur-padho?category=नवभारत विशेष" 
-            state={{ category: "नवभारत विशेष" }} 
+            to="/latest-news" 
             className="black-more-pill"
           >
             और पढ़ें
@@ -27,7 +25,7 @@ export default function VisheshSection() {
         <div className="vishesh-grid-4col">
           {visheshData.map((item) => (
             <article key={item.id} className="vishesh-card">
-              <Link to="/news" className="vishesh-img-link">
+              <Link to={item.url || "/latest-news"} className="vishesh-img-link">
                 <div className="vishesh-img-wrap">
                   <img 
                     src={item.imageUrl} 
@@ -39,7 +37,7 @@ export default function VisheshSection() {
               </Link>
               <div className="vishesh-body">
                 <h3 className="vishesh-title">
-                  <Link to="/news">{item.title}</Link>
+                  <Link to={item.url || "/latest-news"}>{item.title}</Link>
                 </h3>
                 <div className="vishesh-time">{item.time}</div>
               </div>

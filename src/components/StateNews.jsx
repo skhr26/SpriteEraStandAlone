@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { statesList, stateNewsData } from '../data/stateNews';
+import { getRouteForCategory } from '../data/routeMap';
 
 export default function StateNews() {
   const [activeTab, setActiveTab] = useState('maharashtra');
@@ -17,8 +18,7 @@ export default function StateNews() {
             <span>राज्य</span>
           </h2>
           <Link 
-            to="/aur-padho?category=राज्य" 
-            state={{ category: "राज्य" }} 
+            to={currentState ? getRouteForCategory(currentState.name) : '/state/maharashtra'} 
             className="state-more-btn"
           >
             और पढ़ें
@@ -53,54 +53,60 @@ export default function StateNews() {
             
             {/* 4 Big News Cards in 2 Columns */}
             <div className="state-cards-grid">
-              {currentState.cards.map((card) => (
-                <article key={card.id} className="state-lead-card">
-                  <Link to="/news" className="state-card-thumb-wrap">
-                    <img 
-                      src={card.imageUrl} 
-                      alt={card.title} 
-                      loading="lazy"
-                      onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
-                    />
-                  </Link>
-                  <div className="state-card-body">
-                    <h3 className="state-card-title">
-                      <Link to="/news">{card.title}</Link>
-                    </h3>
-                    <div className="state-card-meta">
-                      <span className="state-author">{card.author}</span>
-                      <span className="state-meta-bullet">·</span>
-                      <span className="state-time">{card.time}</span>
+              {currentState.cards.map((card) => {
+                const cardUrl = card.url || `/state/${activeTab}/${card.id}`;
+                return (
+                  <article key={card.id} className="state-lead-card">
+                    <Link to={cardUrl} className="state-card-thumb-wrap">
+                      <img 
+                        src={card.imageUrl} 
+                        alt={card.title} 
+                        loading="lazy"
+                        onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
+                      />
+                    </Link>
+                    <div className="state-card-body">
+                      <h3 className="state-card-title">
+                        <Link to={cardUrl}>{card.title}</Link>
+                      </h3>
+                      <div className="state-card-meta">
+                        <span className="state-author">{card.author}</span>
+                        <span className="state-meta-bullet">·</span>
+                        <span className="state-time">{card.time}</span>
+                      </div>
                     </div>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
 
             {/* Right-most 1 Column: 2 Compact Stories */}
             <div className="state-compact-col">
-              {currentState.compact.map((story) => (
-                <article key={story.id} className="state-compact-story">
-                  <Link to="/news" className="state-compact-thumb">
-                    <img 
-                      src={story.imageUrl} 
-                      alt={story.title} 
-                      loading="lazy"
-                      onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
-                    />
-                  </Link>
-                  <div className="state-compact-body">
-                    <h3 className="state-compact-title">
-                      <Link to="/news">{story.title}</Link>
-                    </h3>
-                    <div className="state-card-meta">
-                      <span className="state-author">{story.author}</span>
-                      <span className="state-meta-bullet">·</span>
-                      <span className="state-time">{story.time}</span>
+              {currentState.compact.map((story) => {
+                const storyUrl = story.url || `/state/${activeTab}/${story.id}`;
+                return (
+                  <article key={story.id} className="state-compact-story">
+                    <Link to={storyUrl} className="state-compact-thumb">
+                      <img 
+                        src={story.imageUrl} 
+                        alt={story.title} 
+                        loading="lazy"
+                        onError={(e) => { e.currentTarget.src = '/assets/placeholder.svg'; }}
+                      />
+                    </Link>
+                    <div className="state-compact-body">
+                      <h3 className="state-compact-title">
+                        <Link to={storyUrl}>{story.title}</Link>
+                      </h3>
+                      <div className="state-card-meta">
+                        <span className="state-author">{story.author}</span>
+                        <span className="state-meta-bullet">·</span>
+                        <span className="state-time">{story.time}</span>
+                      </div>
                     </div>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
 
           </div>

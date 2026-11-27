@@ -1,0 +1,371 @@
+/* ==========================================================================
+   WEB STORY PLAYER (वेब स्टोरीज़ प्लेयर & व्यूअर)
+   Matches Google Web Stories / Instagram Stories full-screen UX:
+   - 9:16 Vertical Card (.web-story-player-card - uniquely scoped)
+   - Segmented Progress Bars (Auto-advancing with timer)
+   - Navbharat Logo Header with Share and Close buttons
+   - Desktop Prev/Next Floating Circle Buttons
+   - Left/Right Tap Zones & Pause on Hold
+   - Atmospheric Blurred Ambient Backdrop
+   ========================================================================== */
+
+.web-story-viewer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: #0b0f14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  font-family: 'Mukta', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Ambient dynamic blurred background */
+.web-story-ambient-bg {
+  position: absolute;
+  inset: -40px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(40px) brightness(0.4) saturate(1.5);
+  transform: scale(1.15);
+  transition: background-image 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.web-story-ambient-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 75% 45%, rgba(180, 130, 45, 0.35) 0%, rgba(45, 60, 75, 0.45) 40%, rgba(10, 12, 16, 0.88) 100%);
+  pointer-events: none;
+}
+
+/* Outer Desktop Close Button (Top-Right) */
+.web-story-desktop-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+}
+
+.web-story-desktop-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.08);
+}
+
+/* Main Player Stage Wrapper (Center Card + Desktop Side Arrows) */
+.web-story-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  padding: 16px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+/* Desktop Circular Navigation Buttons */
+.web-story-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+.web-story-nav-btn.prev {
+  background: rgba(40, 44, 52, 0.85);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.web-story-nav-btn.prev:hover:not(:disabled) {
+  background: rgba(60, 66, 78, 0.95);
+  transform: scale(1.1);
+}
+
+.web-story-nav-btn.prev:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.web-story-nav-btn.next {
+  background: #ffffff;
+  color: #111111;
+}
+
+.web-story-nav-btn.next:hover {
+  background: #f1f3f5;
+  transform: scale(1.1);
+}
+
+/* ── 9:16 Vertical Story Card (Uniquely scoped to prevent grid padding collisions) ── */
+.web-story-player-card {
+  position: relative;
+  width: min(400px, calc(100vw - 32px));
+  height: min(710px, calc(100vh - 44px));
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Full Bleed Slide Image */
+.web-story-image-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.web-story-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+/* Bottom shadow vignette for high text contrast */
+.web-story-gradient-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.05) 18%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(0, 0, 0, 0.88) 82%,
+    rgba(0, 0, 0, 0.96) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Segmented Progress Bars at Top of Card */
+.web-story-player-card .web-story-progress-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  gap: 5px;
+  z-index: 25;
+}
+
+.web-story-progress-track {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.web-story-progress-bar {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.08s linear;
+}
+
+.web-story-progress-bar.completed {
+  width: 100% !important;
+}
+
+/* Card Header: Centered Brand Logo + Right Share Button strictly matching Image 2 */
+.web-story-player-card .web-story-card-header {
+  position: absolute;
+  top: 20px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 25;
+  padding: 4px 2px;
+}
+
+.web-story-brand-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #262626;
+  letter-spacing: -0.5px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.web-story-header-actions {
+  position: absolute;
+  right: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.web-story-action-icon-btn {
+  background: transparent;
+  border: 0;
+  color: #262626;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  filter: drop-shadow(0 1px 2px rgba(255,255,255,0.6));
+  transition: all 0.15s ease;
+}
+
+.web-story-action-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.08);
+}
+
+/* Invisible Tap Areas for Touch/Click Navigation (Left 35% prev, Right 65% next) */
+.web-story-tap-zone-prev {
+  position: absolute;
+  top: 65px;
+  bottom: 160px;
+  left: 0;
+  width: 35%;
+  z-index: 15;
+  cursor: pointer;
+}
+
+.web-story-tap-zone-next {
+  position: absolute;
+  top: 65px;
+  bottom: 160px;
+  right: 0;
+  width: 65%;
+  z-index: 15;
+  cursor: pointer;
+}
+
+/* Bottom Text and Caption Content Area */
+.web-story-player-card .web-story-caption-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 18px 22px 18px;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.web-story-caption-headline {
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.34;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  letter-spacing: 0.1px;
+}
+
+.web-story-author-tag {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+/* Toast Notification (e.g., link copied) */
+.web-story-toast {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 100;
+  pointer-events: none;
+  animation: wsFadeInOut 2.5s ease forwards;
+}
+
+@keyframes wsFadeInOut {
+  0% { opacity: 0; transform: translate(-50%, 10px); }
+  15% { opacity: 1; transform: translate(-50%, 0); }
+  85% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -10px); }
+}
+
+/* Mobile full-screen immersion */
+@media (max-width: 640px) {
+  .web-story-nav-btn {
+    display: none;
+  }
+
+  .web-story-stage {
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .web-story-player-card {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
+  }
+
+  .web-story-desktop-close-btn {
+    display: none;
+  }
+
+  .web-story-caption-headline {
+    font-size: 17.5px;
+  }
+}

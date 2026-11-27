@@ -19,15 +19,15 @@ export default function AurpadhoWebStoriesPage() {
   return (
     <div className="ws-page-wrapper" data-testid="aurpadho-webstories-page">
       <main className="wrap">
-        {/* Section Heading with Red Bar */}
+        {/* Section Heading with Red Bar strictly matching user's template */}
         <h1 className="section-title">वेब स्टोरीज़</h1>
 
-        {/* 6-Column 9:16 Portrait Grid */}
+        {/* 6-Column 9:16 Portrait Grid strictly matching user's template */}
         <section className="stories" id="stories">
           {displayedStories.map((story) => (
             <Link 
               key={story.id} 
-              to={story.url || "/news"} 
+              to={story.url || `/ampstories/web-stories/${story.slug || story.id}`} 
               className="story"
               title={story.headline}
             >
@@ -56,7 +56,7 @@ export default function AurpadhoWebStoriesPage() {
           ))}
         </section>
 
-        {/* Load More Button */}
+        {/* Load More Button strictly matching user's template */}
         {visibleCount < aurPadhoWebStoriesList.length && (
           <button 
             type="button" 

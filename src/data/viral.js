@@ -1,11 +1,13 @@
 /**
  * Viral Section Content (वायरल वीडियो)
- * Referenced in ViralNews component and repeated using Array.map()
+ * Referenced in ViralNews component with authentic routes
  */
 
 export const viralStories = [
   {
     id: "viral-1",
+    slug: "elephant-attack-biker-miracle-escape-shocking-video",
+    url: "/viral/elephant-attack-biker-miracle-escape-shocking-video",
     headline: "वाह किस्मत अच्छी थी, हाथी के पैरों तले कुचल जाने के बाद भी जिंदा बचा बाइक सवार; देखें रुह कपाने वाला VIDEO",
     section: "वायरल वीडियो",
     author: "नवभारत ब्यूरो",
@@ -16,6 +18,8 @@ export const viralStories = [
   },
   {
     id: "viral-2",
+    slug: "nagaland-little-girl-sings-national-anthem-temjen-imna-along-reaction-video",
+    url: "/viral/nagaland-little-girl-sings-national-anthem-temjen-imna-along-reaction-video",
     headline: "नागालैंड की नन्ही बच्ची ने गाया राष्ट्रगान, VIDEO देख फैन हुए लोग; मंत्री तेमजेन इमना ने कही दिल छूने वाली बात",
     section: "वायरल वीडियो",
     author: "वायरल डेस्क",
@@ -26,6 +30,8 @@ export const viralStories = [
   },
   {
     id: "viral-3",
+    slug: "tesla-washing-obsessed-man-8-hours-non-stop-viral-video",
+    url: "/viral/tesla-washing-obsessed-man-8-hours-non-stop-viral-video",
     headline: "TESLA धोने में ऐसा खोया जनाब कि 8 घंटे तक नहीं ली सांस, VIDEO देख बोले- भाई इतना प्यार तो खुद से भी नहीं करते",
     section: "वायरल वीडियो",
     author: "सोशल मीडिया डेस्क",
@@ -36,6 +42,8 @@ export const viralStories = [
   },
   {
     id: "viral-4",
+    slug: "haryana-biryani-stall-dispute-stone-pelting-firing-many-injured-video",
+    url: "/viral/haryana-biryani-stall-dispute-stone-pelting-firing-many-injured-video",
     headline: "हरियाणा में बिरयानी की रेहड़ी लगाने को लेकर बवाल, दो पक्षों में जमकर पथराव और फायरिंग; कई घायल देखें VIDEO",
     section: "वायरल क्राइम",
     author: "नवभारत क्राइम ब्यूरो",

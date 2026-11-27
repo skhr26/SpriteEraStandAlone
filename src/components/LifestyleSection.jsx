@@ -4,18 +4,17 @@ import { lifestyleData } from '../data/lifestyle';
 
 export default function LifestyleSection() {
   return (
-    <section className="lifestyle-section" aria-label="लाइफस्टाइल समाचार">
+    <section className="lifestyle-section" aria-label="लाइफस्टाइल">
       <div className="center-container">
         
-        {/* Header */}
+        {/* Section Header: Left Title with Red Bar, Right Pill 'और पढ़ें' */}
         <div className="section-header-row">
           <h2 className="section-title-bold">
             <span className="accent-bar">|</span>
             <span>लाइफस्टाइल</span>
           </h2>
           <Link 
-            to="/aur-padho?category=लाइफस्टाइल" 
-            state={{ category: "लाइफस्टाइल" }} 
+            to="/lifestyle" 
             className="black-more-pill"
           >
             और पढ़ें
@@ -26,7 +25,7 @@ export default function LifestyleSection() {
         <div className="standard-grid-4col">
           {lifestyleData.map((item) => (
             <article key={item.id} className="standard-news-card">
-              <Link to="/news" className="card-img-link">
+              <Link to={item.url || "/lifestyle"} className="card-img-link">
                 <div className="card-img-wrap">
                   <img 
                     src={item.imageUrl} 
@@ -38,7 +37,7 @@ export default function LifestyleSection() {
               </Link>
               <div className="card-body">
                 <h3 className="card-title">
-                  <Link to="/news">{item.title}</Link>
+                  <Link to={item.url || "/lifestyle"}>{item.title}</Link>
                 </h3>
                 <div className="card-time">{item.time}</div>
               </div>

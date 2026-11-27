@@ -4,18 +4,17 @@ import { technologyData } from '../data/technology';
 
 export default function TechnologySection() {
   return (
-    <section className="technology-section" aria-label="टेक्नॉलजी समाचार">
+    <section className="technology-section" aria-label="टेक्नॉलजी">
       <div className="center-container">
         
-        {/* Header */}
+        {/* Section Header: Left Title with Red Bar, Right Pill 'और पढ़ें' */}
         <div className="section-header-row">
           <h2 className="section-title-bold">
             <span className="accent-bar">|</span>
             <span>टेक्नॉलजी</span>
           </h2>
           <Link 
-            to="/aur-padho?category=टेक्नॉलजी" 
-            state={{ category: "टेक्नॉलजी" }} 
+            to="/tech" 
             className="black-more-pill"
           >
             और पढ़ें
@@ -26,7 +25,7 @@ export default function TechnologySection() {
         <div className="standard-grid-4col">
           {technologyData.map((item) => (
             <article key={item.id} className="standard-news-card">
-              <Link to="/news" className="card-img-link">
+              <Link to={item.url || "/tech"} className="card-img-link">
                 <div className="card-img-wrap">
                   <img 
                     src={item.imageUrl} 
@@ -38,7 +37,7 @@ export default function TechnologySection() {
               </Link>
               <div className="card-body">
                 <h3 className="card-title">
-                  <Link to="/news">{item.title}</Link>
+                  <Link to={item.url || "/tech"}>{item.title}</Link>
                 </h3>
                 <div className="card-time">{item.time}</div>
               </div>
